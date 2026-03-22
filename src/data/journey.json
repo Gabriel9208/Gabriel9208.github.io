@@ -1,32 +1,106 @@
-[
-  {
-    "title": "2025",
-    "heading": "Precision in 3D CV",
-    "content": "Focusing heavily on 3D Computer Vision, Point Cloud analysis, and Deep Learning (PyTorch). Working on reconstructing 3D environments and human structures.",
-    "tags": ["3D CV", "PyTorch", "Point Clouds", "Deep Learning"]
+{
+  "meta": {
+    "title": "The CS Trip",
+    "subtitle": "Like many CS students, I spent years figuring out what I actually wanted to build. I moved through cybersecurity, blockchain, and graphics programming — not always with a clear destination, but always paying attention to what resonated and what didn't.\n\nEventually, a pattern emerged: the problems that kept pulling me back were visual, three-dimensional, and mathematically rich. That realization brought me to where I am now — building my foundations in machine learning and computer vision, working toward a deeper focus on 3D vision."
   },
-  {
-    "title": "Late 2024",
-    "heading": "Diving into Computer Vision",
-    "content": "Began exploring OpenCV and simple machine learning models to analyze human poses and track rhythmic movements in video streams.",
-    "tags": ["OpenCV", "Machine Learning", "Python"]
-  },
-  {
-    "title": "Early 2024",
-    "heading": "The Rhythm of House",
-    "content": "Deepened my passion for House Dance. Realized the connection between physical movement, rhythm, and spatial computing, sparking an interest in computer vision.",
-    "tags": ["House Dance", "Movement", "Rhythm"]
-  },
-  {
-    "title": "2023",
-    "heading": "Web & Systems",
-    "content": "Transitioned into full-stack web development. Discovered the power of React and built scalable backend APIs with Node.js and Databases.",
-    "tags": ["React", "Node.js", "SQL", "TypeScript"]
-  },
-  {
-    "title": "2022",
-    "heading": "The Beginning: Syntax & Logic",
-    "content": "Started programming journey with Python and C++. Built simple command-line tools and learned the fundamentals of object-oriented programming.",
-    "tags": ["Python", "C++", "Algorithms"]
-  }
-]
+  "entries": [
+    {
+      "title": "2026",
+      "heading": "Deep Learning & Computer Vision (ML & CV)",
+      "content": "Specializing in Deep Learning architectures and 3D Vision. Utilizing PyTorch to implement and optimize neural networks, focusing on 3D reconstruction and generative models. Currently bridging the gap between mathematical theory and high-performance implementation.",
+      "tags": [
+        "Deep Learning",
+        "Computer Vision",
+        "PyTorch",
+        "3D Reconstruction"
+      ],
+      "projects": [
+        {
+          "name": "KODAMA",
+          "desc": "A 3D dance pose estimation system that reconstructs human movement from video using deep learning.",
+          "status": "Ongoing"
+        }
+      ]
+    },
+    {
+      "title": "First half of year 2025",
+      "heading": "Computer Graphics",
+      "content": "Deepened expertise in the 3D graphics pipeline and real-time rendering. Explore OpenGL and Shader programming (GLSL) to understand GPU memory management, spatial transformations, and lighting models, establishing a rigorous low-level programming foundation.",
+      "tags": [
+        "3D Graphics",
+        "OpenGL",
+        "Shader Programming",
+        "C++"
+      ],
+      "projects": [
+        {
+          "name": "CG-Robot",
+          "desc": "This project is a C++ application for .",
+          "status": "Done"
+        },
+        {
+          "name": "Texture-Mapping",
+          "desc": "A C++ application for viewing 3D meshes and performing texture mapping and painting operations. It utilizes OpenGL for rendering and ImGui for the user interface. The application allows users to select faces on a mesh, create patches, map textures to those patches, and paint textures onto the mesh.",
+          "status": "Done"
+        }
+      ]
+    },
+    {
+      "title": "2024",
+      "heading": "Cyber Security & Cloud",
+      "content": "Developed a security-first mindset by analyzing web vulnerabilities and penetration testing techniques. Focused on understanding attack vectors to build more robust, resilient systems and protect data integrity.",
+      "tags": [
+        "AWS",
+        "Terraform",
+        "Docker",
+        "Vue.js"
+      ],
+      "projects": [
+        {
+          "name": "AI Guardian",
+          "desc": "A chat-based AWS WAF creation application.",
+          "status": "Done"
+        }
+      ],
+      "internships": [
+        {
+          "company": "ECloudValley",
+          "role": "Cloud Security Intern",
+          "date": "Jul 2024 - Oct 2024"
+        }
+      ],
+      "certificates": [
+        {
+          "name": "AWS Certified Cloud Practitioner",
+          "date": " June 27, 2024",
+          "link": "https://www.credly.com/badges/16e72be6-ff31-48a1-9630-11b53a7f91f7/linked_in_profile"
+        }
+      ]
+    },
+    {
+      "title": "2022 - Early 2024",
+      "heading": "Cyber Security",
+      "content": "Developed a security-first mindset by analyzing web vulnerabilities and penetration testing techniques. Focused on understanding attack vectors to build more robust, resilient systems and protect data integrity.",
+      "tags": [
+        "Web Security",
+        "Linux Command Line Operation"
+      ],
+      "certificates": [
+        {
+          "name": "Certified in Cybersecurity (CC)",
+          "date": "January 31, 2024",
+          "link": "https://www.credly.com/badges/4dfb3010-34d1-4629-bba8-fad54779d572/linked_in_profile"
+        }
+      ]
+    },
+    {
+      "title": "2021",
+      "heading": "The Beginning: Logic & OOP Foundations",
+      "content": "Initiated my software engineering journey with C++.",
+      "tags": [
+        "C++",
+        "OOP"
+      ]
+    }
+  ]
+}

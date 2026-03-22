@@ -3,12 +3,16 @@ import { motion, useScroll, useTransform, useSpring, MotionValue } from "framer-
 
 export const HeroParallax = ({
   products,
+  title,
+  subtitle,
 }: {
   products: {
     title: string;
     link: string;
     thumbnail: string;
   }[];
+  title: string;
+  subtitle: string;
 }) => {
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
@@ -30,7 +34,7 @@ export const HeroParallax = ({
       ref={ref}
       className="h-[150vh] py-40 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
-      <Header />
+      <Header title={title} subtitle={subtitle} />
       <motion.div
         style={{
           rotateX,
@@ -54,15 +58,14 @@ export const HeroParallax = ({
   );
 };
 
-export const Header = () => {
+export const Header = ({ title, subtitle }: { title: string; subtitle: string }) => {
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0">
       <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
-        A Trip Through <br /> CS & Rhythm
+        {title}
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-        From the fundamentals of programming to complex 3D Computer Vision architectures, 
-        and the fluid geometry of House Dance. Scroll down to discover fragments of my exploration.
+        {subtitle}
       </p>
     </div>
   );

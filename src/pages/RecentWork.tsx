@@ -8,7 +8,7 @@ export default function RecentWork() {
       <div className="max-w-7xl w-full">
         <header className="space-y-4 mb-16 px-4">
           <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors font-medium text-lg">
-            &larr; Back to Welcome
+            &larr; Back to Home
           </Link>
           <h1 className="text-4xl md:text-7xl font-bold tracking-tight">Recent Work</h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
@@ -17,7 +17,7 @@ export default function RecentWork() {
         </header>
 
         <div className="w-full">
-          <HoverEffect items={projectsData} />
+          <HoverEffect items={projectsData.items} />
         </div>
       </div>
     </div>

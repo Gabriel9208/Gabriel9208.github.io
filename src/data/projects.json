@@ -1,38 +1,39 @@
-[
-  {
-    "title": "DeepDance 3D",
-    "description": "A real-time 3D pose estimation tool built to analyze House Dance footing and rhythm using PyTorch and OpenCV.",
-    "link": "#",
-    "tech": ["PyTorch", "OpenCV", "Python"]
+{
+  "meta": {
+    "title": "A Trip Through CS & Rhythm",
+    "subtitle": "From the fundamentals of programming to complex 3D Computer Vision architectures. Scroll down to discover fragments of my exploration."
   },
-  {
-    "title": "CloudRender.js",
-    "description": "A WebGL-based point cloud visualization tool that can render millions of points directly in the browser.",
-    "link": "#",
-    "tech": ["WebGL", "TypeScript", "React"]
-  },
-  {
-    "title": "Autonomous Drone Nav",
-    "description": "Simulation environment for testing autonomous drone navigation algorithms using deep reinforcement learning.",
-    "link": "#",
-    "tech": ["Python", "ROS", "RL"]
-  },
-  {
-    "title": "Portfolio v2",
-    "description": "This very website! A scalable, completely static architecture driven by JSON data and Framer Motion for a premium feel.",
-    "link": "#",
-    "tech": ["React", "Vite", "Tailwind CSS"]
-  },
-  {
-    "title": "RhythmSync API",
-    "description": "A backend service deployed horizontally serving ML models that align audio beats to video frames.",
-    "link": "#",
-    "tech": ["Node.js", "FastAPI", "Docker"]
-  },
-  {
-    "title": "Syntax Checker",
-    "description": "One of my earliest projects: a simple C++ syntax linter built from scratch to understand parsers.",
-    "link": "#",
-    "tech": ["C++", "Lexical Analysis"]
-  }
-]
+  "items": [
+    {
+      "title": "KODAMA",
+      "description": "Develop a robust \"Egocentric Scene Understanding Engine\" for uncontrollable environments",
+      "link": "https://github.com/Gabriel9208/KODAMA",
+      "tech": [
+        "PyTorch",
+        "Python",
+        "YOLO",
+        "OpenCV"
+      ]
+    },
+    {
+      "title": "Binary Semantic Segmentation",
+      "description": "Utilize U-Net and ResNet34_UNet as backbone and training on Oxford-IIIT Pet Dataset, in order to classify the pet in the image.",
+      "link": "https://github.com/Gabriel9208/Binary-Semantic-Segmentation",
+      "tech": [
+        "PyTorch",
+        "Python",
+        "U-Net",
+        "ResNet"
+      ]
+    },
+    {
+      "title": "Gabriel9208.github.io",
+      "description": "This very website! Narrowing down the vague idea of a portfolio through vibe coding to a concrete spec driven development process.",
+      "link": "#",
+      "tech": [
+        "Spec Driven Development",
+        "Vibe Coding"
+      ]
+    }
+  ]
+}
