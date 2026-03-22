@@ -38,5 +38,10 @@
     "name": "Vue",
     "icon": "Server",
     "color": "text-green-400"
+  },
+  {
+    "name": "OpenGL",
+    "icon": "Code",
+    "color": "text-blue-400"
   }
 ]
