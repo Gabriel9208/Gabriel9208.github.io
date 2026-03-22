@@ -1,0 +1,38 @@
+[
+  {
+    "title": "DeepDance 3D",
+    "description": "A real-time 3D pose estimation tool built to analyze House Dance footing and rhythm using PyTorch and OpenCV.",
+    "link": "#",
+    "tech": ["PyTorch", "OpenCV", "Python"]
+  },
+  {
+    "title": "CloudRender.js",
+    "description": "A WebGL-based point cloud visualization tool that can render millions of points directly in the browser.",
+    "link": "#",
+    "tech": ["WebGL", "TypeScript", "React"]
+  },
+  {
+    "title": "Autonomous Drone Nav",
+    "description": "Simulation environment for testing autonomous drone navigation algorithms using deep reinforcement learning.",
+    "link": "#",
+    "tech": ["Python", "ROS", "RL"]
+  },
+  {
+    "title": "Portfolio v2",
+    "description": "This very website! A scalable, completely static architecture driven by JSON data and Framer Motion for a premium feel.",
+    "link": "#",
+    "tech": ["React", "Vite", "Tailwind CSS"]
+  },
+  {
+    "title": "RhythmSync API",
+    "description": "A backend service deployed horizontally serving ML models that align audio beats to video frames.",
+    "link": "#",
+    "tech": ["Node.js", "FastAPI", "Docker"]
+  },
+  {
+    "title": "Syntax Checker",
+    "description": "One of my earliest projects: a simple C++ syntax linter built from scratch to understand parsers.",
+    "link": "#",
+    "tech": ["C++", "Lexical Analysis"]
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "title": "2025",
+    "heading": "Precision in 3D CV",
+    "content": "Focusing heavily on 3D Computer Vision, Point Cloud analysis, and Deep Learning (PyTorch). Working on reconstructing 3D environments and human structures.",
+    "tags": ["3D CV", "PyTorch", "Point Clouds", "Deep Learning"]
+  },
+  {
+    "title": "Late 2024",
+    "heading": "Diving into Computer Vision",
+    "content": "Began exploring OpenCV and simple machine learning models to analyze human poses and track rhythmic movements in video streams.",
+    "tags": ["OpenCV", "Machine Learning", "Python"]
+  },
+  {
+    "title": "Early 2024",
+    "heading": "The Rhythm of House",
+    "content": "Deepened my passion for House Dance. Realized the connection between physical movement, rhythm, and spatial computing, sparking an interest in computer vision.",
+    "tags": ["House Dance", "Movement", "Rhythm"]
+  },
+  {
+    "title": "2023",
+    "heading": "Web & Systems",
+    "content": "Transitioned into full-stack web development. Discovered the power of React and built scalable backend APIs with Node.js and Databases.",
+    "tags": ["React", "Node.js", "SQL", "TypeScript"]
+  },
+  {
+    "title": "2022",
+    "heading": "The Beginning: Syntax & Logic",
+    "content": "Started programming journey with Python and C++. Built simple command-line tools and learned the fundamentals of object-oriented programming.",
+    "tags": ["Python", "C++", "Algorithms"]
+  }
+]
