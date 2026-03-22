@@ -1,23 +1,28 @@
 {
   "meta": {
-    "title": "The CS Trip",
-    "subtitle": "Like many CS students, I spent years figuring out what I actually wanted to build. I moved through cybersecurity, blockchain, and graphics programming — not always with a clear destination, but always paying attention to what resonated and what didn't.\n\nEventually, a pattern emerged: the problems that kept pulling me back were visual, three-dimensional, and mathematically rich. That realization brought me to where I am now — building my foundations in machine learning and computer vision, working toward a deeper focus on 3D vision."
+    "title": "Interests Explorations",
+    "subtitle": "Like many CS students, I spent time figuring out what I actually wanted to build. I moved through cybersecurity, blockchain, and graphics programming — not always with a clear direction, but always paying attention to what resonated and what didn't.\n\nOver time, a pattern emerged: the problems that kept pulling me back were visual, three-dimensional, and mathematically grounded. That realization led me to where I am now — building foundations in machine learning and computer vision, with a growing focus on 3D vision."
   },
   "entries": [
     {
       "title": "2026",
       "heading": "Deep Learning & Computer Vision (ML & CV)",
-      "content": "Specializing in Deep Learning architectures and 3D Vision. Utilizing PyTorch to implement and optimize neural networks, focusing on 3D reconstruction and generative models. Currently bridging the gap between mathematical theory and high-performance implementation.",
+      "content": "Focusing on deep learning architectures and computer vision. Using PyTorch to implement and experiment with neural networks while working to close the gap between mathematical theory and practical application.",
       "tags": [
         "Deep Learning",
         "Computer Vision",
-        "PyTorch",
-        "3D Reconstruction"
+        "Multiview Geometry",
+        "PyTorch"
       ],
       "projects": [
         {
           "name": "KODAMA",
-          "desc": "A 3D dance pose estimation system that reconstructs human movement from video using deep learning.",
+          "desc": "An egocentric scene understanding engine designed for uncontrolled environments.",
+          "status": "Ongoing"
+        },
+        {
+          "name": "Binary Semantic Segmentation",
+          "desc": "Implemented U-Net and ResNet34-based U-Net for binary semantic segmentation, trained on the Oxford-IIIT Pet Dataset to classify pets within images.",
           "status": "Ongoing"
         }
       ]
@@ -25,22 +30,23 @@
     {
       "title": "First half of year 2025",
       "heading": "Computer Graphics",
-      "content": "Deepened expertise in the 3D graphics pipeline and real-time rendering. Explore OpenGL and Shader programming (GLSL) to understand GPU memory management, spatial transformations, and lighting models, establishing a rigorous low-level programming foundation.",
+      "content": "Explored the 3D graphics pipeline and real-time rendering through OpenGL and GLSL shader programming. Worked with GPU memory management, spatial transformations, and lighting models to build a more concrete low-level programming foundation.",
       "tags": [
         "3D Graphics",
         "OpenGL",
         "Shader Programming",
-        "C++"
+        "C++",
+        "Design Patterns"
       ],
       "projects": [
         {
           "name": "CG-Robot",
-          "desc": "This project is a C++ application for .",
+          "desc": "A C++ OpenGL application for rendering 3D scenes with support for animation, visual effects, and a graphical user interface. The project is structured around a clear separation of application logic, rendering, scene management, and effects.",
           "status": "Done"
         },
         {
           "name": "Texture-Mapping",
-          "desc": "A C++ application for viewing 3D meshes and performing texture mapping and painting operations. It utilizes OpenGL for rendering and ImGui for the user interface. The application allows users to select faces on a mesh, create patches, map textures to those patches, and paint textures onto the mesh.",
+          "desc": "A C++ application for viewing 3D meshes and performing texture mapping and painting. Built with OpenGL for rendering and ImGui for the interface, it supports face selection, patch creation, texture mapping, and direct texture painting on meshes.",
           "status": "Done"
         }
       ]
@@ -48,7 +54,7 @@
     {
       "title": "2024",
       "heading": "Cyber Security & Cloud",
-      "content": "Developed a security-first mindset by analyzing web vulnerabilities and penetration testing techniques. Focused on understanding attack vectors to build more robust, resilient systems and protect data integrity.",
+      "content": "Explored cloud computing with a focus on security practices and infrastructure deployment on AWS.",
       "tags": [
         "AWS",
         "Terraform",
@@ -58,13 +64,13 @@
       "projects": [
         {
           "name": "AI Guardian",
-          "desc": "A chat-based AWS WAF creation application.",
+          "desc": "A chat-based application for creating and managing AWS WAF configurations.",
           "status": "Done"
         }
       ],
       "internships": [
         {
-          "company": "ECloudValley",
+          "company": "eCloudValley",
           "role": "Cloud Security Intern",
           "date": "Jul 2024 - Oct 2024"
         }
@@ -72,7 +78,7 @@
       "certificates": [
         {
           "name": "AWS Certified Cloud Practitioner",
-          "date": " June 27, 2024",
+          "date": "June 27, 2024",
           "link": "https://www.credly.com/badges/16e72be6-ff31-48a1-9630-11b53a7f91f7/linked_in_profile"
         }
       ]
@@ -80,10 +86,12 @@
     {
       "title": "2022 - Early 2024",
       "heading": "Cyber Security",
-      "content": "Developed a security-first mindset by analyzing web vulnerabilities and penetration testing techniques. Focused on understanding attack vectors to build more robust, resilient systems and protect data integrity.",
+      "content": "Focused on web security fundamentals and participated in CTF competitions to sharpen practical problem-solving skills.",
       "tags": [
         "Web Security",
-        "Linux Command Line Operation"
+        "Linux Command Line Operation",
+        "Pico CTF",
+        "Snyc CTF"
       ],
       "certificates": [
         {
@@ -96,7 +104,7 @@
     {
       "title": "2021",
       "heading": "The Beginning: Logic & OOP Foundations",
-      "content": "Initiated my software engineering journey with C++.",
+      "content": "Started my software engineering journey with C++, learning the fundamentals of logic and object-oriented programming.",
       "tags": [
         "C++",
         "OOP"

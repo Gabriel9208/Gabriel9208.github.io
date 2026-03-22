@@ -1,10 +1,42 @@
 [
-  { "name": "Python",   "icon": "Code",     "color": "text-blue-400"   },
-  { "name": "C++",      "icon": "Database", "color": "text-pink-400"   },
-  { "name": "Terraform","icon": "Code",     "color": "text-green-400"  },
-  { "name": "PyTorch",  "icon": "Orbit",    "color": "text-orange-400" },
-  { "name": "Git",      "icon": "Github",   "color": "text-slate-400"  },
-  { "name": "Docker",   "icon": "Laptop",   "color": "text-teal-400"   },
-  { "name": "AWS",      "icon": "Braces",   "color": "text-yellow-400" },
-  { "name": "Vue",      "icon": "Server",   "color": "text-green-400"  }
+  {
+    "name": "Python",
+    "icon": "Code",
+    "color": "text-blue-400"
+  },
+  {
+    "name": "C++",
+    "icon": "Code",
+    "color": "text-pink-400"
+  },
+  {
+    "name": "Terraform",
+    "icon": "Code",
+    "color": "text-green-400"
+  },
+  {
+    "name": "PyTorch",
+    "icon": "Orbit",
+    "color": "text-orange-400"
+  },
+  {
+    "name": "Git",
+    "icon": "Github",
+    "color": "text-slate-400"
+  },
+  {
+    "name": "Docker",
+    "icon": "Laptop",
+    "color": "text-teal-400"
+  },
+  {
+    "name": "AWS",
+    "icon": "Braces",
+    "color": "text-yellow-400"
+  },
+  {
+    "name": "Vue",
+    "icon": "Server",
+    "color": "text-green-400"
+  }
 ]

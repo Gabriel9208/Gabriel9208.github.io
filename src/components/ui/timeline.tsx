@@ -26,29 +26,36 @@ const TimelineItem = ({ item }: { item: TimelineEntry }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
-        <div className="h-10 absolute left-3 md:left-3 w-10 border border-border rounded-full bg-background flex items-center justify-center transition-colors group-hover:border-foreground/50">
-          <div className="h-4 w-4 rounded-full bg-foreground border border-neutral-300 p-2 transition-transform group-hover:scale-125" />
+        <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full flex items-center justify-center transition-colors"
+             style={{ background: '#111', border: isHovered ? '1px solid #444' : '1px solid #2a2a2a' }}>
+          <div className="h-4 w-4 rounded-full p-2 transition-transform group-hover:scale-125"
+               style={{ background: isHovered ? '#0A84FF' : '#555', border: '1px solid #333' }} />
         </div>
-        <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+        <h3 className="hidden md:block pl-20 font-bold transition-colors duration-300"
+            style={{ fontSize: 48, color: isHovered ? '#fff' : '#555' }}>
           {item.title}
         </h3>
       </div>
 
       <div className="relative pl-20 pr-4 md:pl-4 w-full">
-        <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+        <h3 className="md:hidden block mb-4 text-left font-bold transition-colors duration-300"
+            style={{ fontSize: 48, color: isHovered ? '#fff' : '#555' }}>
           {item.title}
         </h3>
-        <h4 className="text-2xl md:text-4xl font-bold text-foreground mb-6 transition-colors duration-300 group-hover:text-blue-400">
+        <h4 className="font-bold mb-6 transition-colors duration-300"
+            style={{ fontSize: 32, color: isHovered ? '#0A84FF' : '#fff' }}>
           {item.heading}
         </h4>
-        <div className="mb-8 text-neutral-400 text-lg md:text-xl font-light leading-relaxed">
+        <div className="mb-8 font-light leading-relaxed"
+             style={{ fontSize: 17, color: '#777' }}>
           {item.content}
         </div>
         <div className="flex flex-wrap gap-2 mb-4">
           {item.tags?.map((tag) => (
             <span
               key={tag}
-              className="px-4 py-2 bg-muted/50 border border-border rounded-full text-sm text-foreground font-semibold tracking-wide"
+              style={{ background: '#1a1a1a', border: '1px solid #2a2a2a', color: '#aaa', fontSize: 14 }}
+              className="px-4 py-2 rounded-full font-semibold tracking-wide"
             >
               {tag}
             </span>
@@ -65,28 +72,29 @@ const TimelineItem = ({ item }: { item: TimelineEntry }) => {
                 transition={{ duration: 0.3, ease: "anticipate" }}
                 className="overflow-hidden"
               >
-                <div className="pt-6 pb-2 border-t border-border/50 flex flex-col gap-8 mt-4">
+                <div className="pt-6 pb-2 flex flex-col gap-8 mt-4" style={{ borderTop: '1px solid #1e1e1e' }}>
                   {/* Internships Section */}
                   {item.internships && item.internships.length > 0 && (
                     <div>
-                      <h5 className="text-sm font-bold text-foreground uppercase tracking-widest mb-4 flex items-center gap-2">
+                      <h5 className="font-bold uppercase tracking-widest mb-4 flex items-center gap-2" style={{ color: '#fff', fontSize: 14 }}>
                         <span className="w-2 h-2 rounded-full bg-blue-500"></span> Internships
                       </h5>
                       <div className="flex flex-col gap-4">
                         {item.internships.map((intern, i) => (
                           <div
                             key={i}
-                            className="bg-card border border-border rounded-xl p-5 hover:border-foreground/30 transition-colors"
+                            className="rounded-xl p-5 transition-colors"
+                            style={{ background: '#1a1a1a', border: '1px solid #2a2a2a' }}
                           >
                             <div className="flex justify-between items-start mb-2">
-                              <strong className="text-foreground text-lg">{intern.role}</strong>
+                              <strong style={{ color: '#fff', fontSize: 18 }}>{intern.role}</strong>
                               {intern.date && (
-                                <span className="text-xs font-mono bg-muted px-2 py-1 rounded text-muted-foreground">
+                                <span className="font-mono px-2 py-1 rounded" style={{ fontSize: 12, background: '#222', color: '#888' }}>
                                   {intern.date}
                                 </span>
                               )}
                             </div>
-                            <div className="text-base text-muted-foreground">
+                            <div style={{ fontSize: 16, color: '#777' }}>
                               {intern.company}
                             </div>
                           </div>
@@ -98,33 +106,39 @@ const TimelineItem = ({ item }: { item: TimelineEntry }) => {
                   {/* Projects Section */}
                   {item.projects && item.projects.length > 0 && (
                     <div>
-                      <h5 className="text-sm font-bold text-foreground uppercase tracking-widest mb-4 flex items-center gap-2">
+                      <h5 className="font-bold uppercase tracking-widest mb-4 flex items-center gap-2" style={{ color: '#fff', fontSize: 14 }}>
                         <span className="w-2 h-2 rounded-full bg-green-500"></span> Projects
                       </h5>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {item.projects.map((proj, i) => (
                           <div
                             key={i}
-                            className="bg-muted/30 border border-border rounded-xl p-4 hover:bg-muted/50 transition-colors"
+                            className="rounded-xl p-4 transition-colors"
+                            style={{ background: '#1a1a1a', border: '1px solid #2a2a2a' }}
                           >
                             <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
                               {proj.link ? (
-                                <a href={proj.link} target="_blank" rel="noreferrer" className="text-foreground hover:text-blue-400 text-base font-bold transition-colors">
+                                <a href={proj.link} target="_blank" rel="noreferrer" className="font-bold transition-colors hover:text-blue-400" style={{ color: '#fff', fontSize: 16 }}>
                                   {proj.name}
                                 </a>
                               ) : (
-                                <strong className="text-foreground block text-base">
+                                <strong className="block font-bold" style={{ color: '#fff', fontSize: 16 }}>
                                   {proj.name}
                                 </strong>
                               )}
                               {proj.status && (
-                                <span className={`text-[10px] uppercase font-bold px-2 py-0.5 rounded-full whitespace-nowrap ${proj.status.toLowerCase() === 'ongoing' ? 'bg-blue-500/20 text-blue-400' : 'bg-green-500/20 text-green-400'}`}>
+                                <span className="uppercase font-bold px-2 py-0.5 rounded-full whitespace-nowrap"
+                                      style={{
+                                        fontSize: 10,
+                                        background: proj.status.toLowerCase() === 'ongoing' ? 'rgba(10,132,255,0.15)' : 'rgba(48,209,88,0.15)',
+                                        color: proj.status.toLowerCase() === 'ongoing' ? '#0A84FF' : '#30D158'
+                                      }}>
                                   {proj.status}
                                 </span>
                               )}
                             </div>
                             {proj.desc && (
-                              <p className="text-sm text-muted-foreground leading-relaxed">
+                              <p className="leading-relaxed" style={{ fontSize: 14, color: '#777' }}>
                                 {proj.desc}
                               </p>
                             )}
@@ -137,20 +151,20 @@ const TimelineItem = ({ item }: { item: TimelineEntry }) => {
                   {/* Certificates Section */}
                   {item.certificates && item.certificates.length > 0 && (
                     <div>
-                      <h5 className="text-sm font-bold text-foreground uppercase tracking-widest mb-4 flex items-center gap-2">
+                      <h5 className="font-bold uppercase tracking-widest mb-4 flex items-center gap-2" style={{ color: '#fff', fontSize: 14 }}>
                         <span className="w-2 h-2 rounded-full bg-orange-500"></span> Certificates
                       </h5>
                       <div className="flex flex-wrap gap-3">
                         {item.certificates.map((cert, i) => (
-                          <div key={i} className="flex items-center gap-2 bg-card border border-border px-4 py-2 rounded-lg">
+                          <div key={i} className="flex items-center gap-2 px-4 py-2 rounded-lg" style={{ background: '#1a1a1a', border: '1px solid #2a2a2a' }}>
                             {cert.link ? (
-                              <a href={cert.link} target="_blank" rel="noreferrer" className="text-foreground text-sm font-medium hover:text-blue-400 transition-colors">
+                              <a href={cert.link} target="_blank" rel="noreferrer" className="font-medium transition-colors hover:text-blue-400" style={{ color: '#fff', fontSize: 14 }}>
                                 {cert.name}
                               </a>
                             ) : (
-                              <span className="text-foreground text-sm font-medium">{cert.name}</span>
+                              <span className="font-medium" style={{ color: '#fff', fontSize: 14 }}>{cert.name}</span>
                             )}
-                            {cert.date && <span className="text-xs text-muted-foreground border-l border-border pl-2">{cert.date}</span>}
+                            {cert.date && <span className="pl-2" style={{ fontSize: 12, color: '#777', borderLeft: '1px solid #2a2a2a' }}>{cert.date}</span>}
                           </div>
                         ))}
                       </div>
@@ -165,7 +179,7 @@ const TimelineItem = ({ item }: { item: TimelineEntry }) => {
   );
 };
 
-export const Timeline = ({ data, title, subtitle }: { data: TimelineEntry[], title: string, subtitle: string }) => {
+export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
@@ -186,18 +200,7 @@ export const Timeline = ({ data, title, subtitle }: { data: TimelineEntry[], tit
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div className="w-full bg-background font-sans md:px-10" ref={containerRef}>
-      <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-3xl md:text-6xl mb-4 text-foreground max-w-4xl font-bold tracking-tight">
-          {title}
-        </h2>
-        {subtitle.split("\n\n").map((para, i) => (
-          <p key={i} className="text-muted-foreground text-lg md:text-xl max-w-2xl mb-4">
-            {para}
-          </p>
-        ))}
-      </div>
-
+    <div className="w-full font-sans md:px-10" ref={containerRef} style={{ background: '#000' }}>
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
         {data.map((item, index) => (
           <TimelineItem key={index} item={item} />
@@ -206,7 +209,7 @@ export const Timeline = ({ data, title, subtitle }: { data: TimelineEntry[], tit
           style={{
             height: height + "px",
           }}
-          className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-border to-transparent to-[99%]  [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] "
+          className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-[#1e1e1e] to-transparent to-[99%]  [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] "
         >
           <motion.div
             style={{

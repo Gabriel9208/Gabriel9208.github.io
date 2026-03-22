@@ -34,7 +34,8 @@ export const HoverEffect = ({
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-accent dark:bg-accent/80 block rounded-3xl"
+                className="absolute inset-0 h-full w-full block rounded-3xl"
+                style={{ background: '#1a1a1a' }}
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -53,7 +54,8 @@ export const HoverEffect = ({
             <CardDescription>{item.description}</CardDescription>
             <div className="flex flex-wrap gap-2 mt-6 z-50 relative">
                {item.tech?.map((t) => (
-                   <span key={t} className="px-3 py-1 bg-border/50 border border-border/80 rounded-md text-xs font-semibold text-foreground tracking-wide">
+                   <span key={t} className="px-3 py-1 rounded-md font-semibold tracking-wide"
+                         style={{ background: '#1a1a1a', border: '1px solid #2a2a2a', color: '#aaa', fontSize: 13 }}>
                       {t}
                    </span>
                ))}
@@ -75,9 +77,10 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-6 overflow-hidden bg-card border border-border group-hover:border-foreground/50 relative z-20 transition-colors",
+        "rounded-2xl h-full w-full p-6 overflow-hidden group-hover:border-[#333] relative z-20 transition-colors",
         className
       )}
+      style={{ background: '#111', border: '1px solid #1e1e1e' }}
     >
       <div className="relative z-50">
         <div className="p-4">{children}</div>
@@ -93,7 +96,7 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn("text-foreground font-bold text-2xl tracking-wide", className)}>
+    <h4 className={cn("font-bold tracking-wide", className)} style={{ color: '#fff', fontSize: 20 }}>
       {children}
     </h4>
   );
@@ -108,9 +111,10 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "mt-4 text-muted-foreground tracking-wide leading-relaxed text-sm md:text-base",
+        "mt-4 tracking-wide leading-relaxed",
         className
       )}
+      style={{ color: '#777', fontSize: 16 }}
     >
       {children}
     </p>

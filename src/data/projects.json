@@ -1,19 +1,20 @@
 {
   "meta": {
-    "title": "A Trip Through CS & Rhythm",
-    "subtitle": "From the fundamentals of programming to complex 3D Computer Vision architectures. Scroll down to discover fragments of my exploration."
+    "title": "Recent Projects",
+    "subtitle": "A collection of projects and assignments."
   },
   "items": [
     {
       "title": "KODAMA",
-      "description": "Develop a robust \"Egocentric Scene Understanding Engine\" for uncontrollable environments",
+      "description": "An egocentric scene understanding engine designed for uncontrolled environments.",
       "link": "https://github.com/Gabriel9208/KODAMA",
       "tech": [
         "PyTorch",
         "Python",
         "YOLO",
         "OpenCV"
-      ]
+      ],
+      "highlight": true
     },
     {
       "title": "Binary Semantic Segmentation",

@@ -3,7 +3,6 @@ import Welcome from "./pages/Welcome";
 import Exploration from "./pages/Exploration";
 import RecentWork from "./pages/RecentWork";
 
-// Simple navigation bar
 function Navigation() {
   const { pathname } = useLocation();
 
@@ -13,16 +12,11 @@ function Navigation() {
       : "text-muted-foreground hover:text-foreground transition-colors";
 
   return (
-    <nav className="fixed top-0 inset-x-0 z-50 py-4 px-6 border-b border-border bg-background/80 backdrop-blur-md">
-      <div className="max-w-5xl mx-auto flex justify-between items-center">
-        <Link to="/" className="font-bold text-xl tracking-tight">
-          Gabriel's Page
-        </Link>
-        <div className="flex gap-6 text-sm font-medium">
-          <Link to="/" className={linkClass("/")}>Home</Link>
-          <Link to="/exploration" className={linkClass("/exploration")}>Explorations</Link>
-          <Link to="/recent-work" className={linkClass("/recent-work")}>Recent Works</Link>
-        </div>
+    <nav className="fixed top-0 inset-x-0 z-50 py-4 px-6" style={{ background: '#000', borderBottom: '1px solid #1e1e1e' }}>
+      <div className="flex justify-center items-center gap-8">
+        <Link to="/" className={linkClass("/")}>Home</Link>
+        <Link to="/exploration" className={linkClass("/exploration")}>Explorations</Link>
+        <Link to="/recent-work" className={linkClass("/recent-work")}>Recent Works</Link>
       </div>
     </nav>
   );

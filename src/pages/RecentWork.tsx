@@ -1,24 +1,20 @@
-import { Link } from "react-router-dom";
 import projectsData from "../data/projects.json";
 import { HoverEffect } from "../components/ui/card-hover-effect";
 
 export default function RecentWork() {
   return (
-    <div className="min-h-screen pt-24 pb-20 px-6 md:px-12 bg-background flex flex-col items-center">
-      <div className="max-w-7xl w-full">
-        <header className="space-y-4 mb-16 px-4">
-          <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors font-medium text-lg">
-            &larr; Back to Home
-          </Link>
-          <h1 className="text-4xl md:text-7xl font-bold tracking-tight">Recent Work</h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-            A showcase of my latest projects, experiments, and technical deep dives across Web Dev, Computer Vision, and beyond.
-          </p>
-        </header>
+    <div style={{ background: '#000', paddingTop: 96, paddingBottom: 64 }} className="px-4 md:px-8">
+      <div style={{ maxWidth: 1200, margin: '0 auto 48px' }} className="px-4">
+        <h1 style={{ fontSize: 56, fontWeight: 700, color: '#fff', letterSpacing: -1.5, marginBottom: 12 }}>
+          Recent Works
+        </h1>
+        <p style={{ fontSize: 17, color: '#777', lineHeight: 1.7, maxWidth: 600 }}>
+          A collection of projects and assignments.
+        </p>
+      </div>
 
-        <div className="w-full">
-          <HoverEffect items={projectsData.items} />
-        </div>
+      <div className="w-full">
+        <HoverEffect items={projectsData.items} />
       </div>
     </div>
   );
