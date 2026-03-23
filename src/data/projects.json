@@ -1,40 +1,75 @@
-{
-  "meta": {
-    "title": "Recent Projects",
-    "subtitle": "A collection of projects and assignments."
+[
+  {
+    "title": "KODAMA",
+    "description": "An egocentric scene understanding engine designed for uncontrolled environments.",
+    "link": "https://github.com/Gabriel9208/KODAMA",
+    "tags": [
+      "PyTorch",
+      "Python",
+      "YOLO",
+      "OpenCV"
+    ],
+    "highlight": true,
+    "time": "2026",
+    "recent": true,
+    "status": "Ongoing"
   },
-  "items": [
-    {
-      "title": "KODAMA",
-      "description": "An egocentric scene understanding engine designed for uncontrolled environments.",
-      "link": "https://github.com/Gabriel9208/KODAMA",
-      "tech": [
-        "PyTorch",
-        "Python",
-        "YOLO",
-        "OpenCV"
-      ],
-      "highlight": true
-    },
-    {
-      "title": "Binary Semantic Segmentation",
-      "description": "Utilize U-Net and ResNet34_UNet as backbone and training on Oxford-IIIT Pet Dataset, in order to classify the pet in the image.",
-      "link": "https://github.com/Gabriel9208/Binary-Semantic-Segmentation",
-      "tech": [
-        "PyTorch",
-        "Python",
-        "U-Net",
-        "ResNet"
-      ]
-    },
-    {
-      "title": "Gabriel9208.github.io",
-      "description": "This very website! Narrowing down the vague idea of a portfolio through vibe coding to a concrete spec driven development process.",
-      "link": "#",
-      "tech": [
-        "Spec Driven Development",
-        "Vibe Coding"
-      ]
-    }
-  ]
-}
+  {
+    "title": "Binary Semantic Segmentation",
+    "description": "Implemented U-Net and ResNet34-based U-Net for binary semantic segmentation, trained on the Oxford-IIIT Pet Dataset to classify pets within images.",
+    "link": "https://github.com/Gabriel9208/Binary-Semantic-Segmentation",
+    "tags": [
+      "PyTorch",
+      "Python",
+      "U-Net",
+      "ResNet"
+    ],
+    "time": "2026",
+    "recent": true,
+    "status": "Ongoing"
+  },
+  {
+    "title": "Gabriel9208.github.io",
+    "description": "This very website! Narrowing down the vague idea of a portfolio through vibe coding to a concrete spec driven development process.",
+    "link": "#",
+    "tags": [
+      "Spec Driven Development",
+      "Vibe Coding"
+    ],
+    "recent": true
+  },
+  {
+    "title": "CG-Robot",
+    "description": "A C++ OpenGL application for rendering 3D scenes with support for animation, visual effects, and a graphical user interface. The project is structured around a clear separation of application logic, rendering, scene management, and effects.",
+    "link": "https://github.com/Galeta-Program/CG-Robot.git",
+    "tags": [
+      "C++",
+      "OpenGL"
+    ],
+    "time": "First half of year 2025",
+    "status": "Done"
+  },
+  {
+    "title": "Texture-Mapping",
+    "description": "A C++ application for viewing 3D meshes and performing texture mapping and painting. Built with OpenGL for rendering and ImGui for the interface, it supports face selection, patch creation, texture mapping, and direct texture painting on meshes.",
+    "link": "https://github.com/Gabriel9208/Texture-Mapping.git",
+    "tags": [
+      "C++",
+      "OpenGL",
+      "ImGui"
+    ],
+    "time": "First half of year 2025",
+    "status": "Done"
+  },
+  {
+    "title": "AI Guardian",
+    "description": "A chat-based application for creating and managing AWS WAF configurations.",
+    "link": "https://github.com/Gabriel9208/AI-Guardian.git",
+    "tags": [
+      "AWS",
+      "WAF"
+    ],
+    "time": "2024",
+    "status": "Done"
+  }
+]

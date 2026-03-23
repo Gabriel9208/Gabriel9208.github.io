@@ -8,9 +8,9 @@ export const HoverEffect = ({
 }: {
   items: {
     title: string;
-    description: string;
-    link: string;
-    tech?: string[];
+    description?: string;
+    link?: string;
+    tags?: string[];
   }[];
   className?: string;
 }) => {
@@ -19,14 +19,19 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10",
+        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10",
         className
       )}
     >
-      {items.map((item, idx) => (
-        <a
-          href={item?.link}
-          key={item?.link + idx}
+      {items.map((item, idx) => {
+        const isLink = Boolean(item?.link);
+        const externalProps = isLink ? { href: item.link, target: "_blank", rel: "noopener noreferrer" } : {};
+        const Tag = isLink ? "a" : "div";
+
+        return (
+        <Tag
+          {...externalProps}
+          key={(item?.link || "") + idx}
           className="relative group block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -50,10 +55,12 @@ export const HoverEffect = ({
             )}
           </AnimatePresence>
           <Card>
-            <CardTitle>{item.title}</CardTitle>
-            <CardDescription>{item.description}</CardDescription>
+            <div className="flex-grow">
+              <CardTitle>{item.title}</CardTitle>
+              <CardDescription>{item.description}</CardDescription>
+            </div>
             <div className="flex flex-wrap gap-2 mt-6 z-50 relative">
-               {item.tech?.map((t) => (
+               {item.tags?.map((t: string) => (
                    <span key={t} className="px-3 py-1 rounded-md font-semibold tracking-wide"
                          style={{ background: '#1a1a1a', border: '1px solid #2a2a2a', color: '#aaa', fontSize: 13 }}>
                       {t}
@@ -61,8 +68,9 @@ export const HoverEffect = ({
                ))}
             </div>
           </Card>
-        </a>
-      ))}
+        </Tag>
+        );
+      })}
     </div>
   );
 };
@@ -77,13 +85,13 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-6 overflow-hidden group-hover:border-[#333] relative z-20 transition-colors",
+        "rounded-2xl h-full w-full p-5 overflow-hidden group-hover:border-[#333] relative z-20 transition-colors flex flex-col min-h-[220px]",
         className
       )}
       style={{ background: '#111', border: '1px solid #1e1e1e' }}
     >
-      <div className="relative z-50">
-        <div className="p-4">{children}</div>
+      <div className="relative z-50 flex flex-col flex-grow">
+        <div className="p-4 flex flex-col flex-grow">{children}</div>
       </div>
     </div>
   );

@@ -1,11 +1,11 @@
 {
   "meta": {
     "title": "Interests Explorations",
-    "subtitle": "Like many CS students, I spent time figuring out what I actually wanted to build. I moved through cybersecurity, blockchain, and graphics programming — not always with a clear direction, but always paying attention to what resonated and what didn't.\n\nOver time, a pattern emerged: the problems that kept pulling me back were visual, three-dimensional, and mathematically grounded. That realization led me to where I am now — building foundations in machine learning and computer vision, with a growing focus on 3D vision."
+    "subtitle": "I spent time figuring out what I actually wanted to build. I moved through cybersecurity, blockchain, and graphics programming — not always with a clear direction, but always paying attention to what resonated and what didn't. Over time, a pattern emerged: the problems that kept pulling me back were visual, three-dimensional, and mathematically grounded. That realization led me to where I am now — building foundations in machine learning and computer vision, with a growing focus on 3D vision."
   },
   "entries": [
     {
-      "title": "2026",
+      "time": "2026",
       "heading": "Deep Learning & Computer Vision (ML & CV)",
       "content": "Focusing on deep learning architectures and computer vision. Using PyTorch to implement and experiment with neural networks while working to close the gap between mathematical theory and practical application.",
       "tags": [
@@ -13,22 +13,10 @@
         "Computer Vision",
         "Multiview Geometry",
         "PyTorch"
-      ],
-      "projects": [
-        {
-          "name": "KODAMA",
-          "desc": "An egocentric scene understanding engine designed for uncontrolled environments.",
-          "status": "Ongoing"
-        },
-        {
-          "name": "Binary Semantic Segmentation",
-          "desc": "Implemented U-Net and ResNet34-based U-Net for binary semantic segmentation, trained on the Oxford-IIIT Pet Dataset to classify pets within images.",
-          "status": "Ongoing"
-        }
       ]
     },
     {
-      "title": "First half of year 2025",
+      "time": "First half of year 2025",
       "heading": "Computer Graphics",
       "content": "Explored the 3D graphics pipeline and real-time rendering through OpenGL and GLSL shader programming. Worked with GPU memory management, spatial transformations, and lighting models to build a more concrete low-level programming foundation.",
       "tags": [
@@ -37,22 +25,10 @@
         "Shader Programming",
         "C++",
         "Design Patterns"
-      ],
-      "projects": [
-        {
-          "name": "CG-Robot",
-          "desc": "A C++ OpenGL application for rendering 3D scenes with support for animation, visual effects, and a graphical user interface. The project is structured around a clear separation of application logic, rendering, scene management, and effects.",
-          "status": "Done"
-        },
-        {
-          "name": "Texture-Mapping",
-          "desc": "A C++ application for viewing 3D meshes and performing texture mapping and painting. Built with OpenGL for rendering and ImGui for the interface, it supports face selection, patch creation, texture mapping, and direct texture painting on meshes.",
-          "status": "Done"
-        }
       ]
     },
     {
-      "title": "2024",
+      "time": "2024",
       "heading": "Cyber Security & Cloud",
       "content": "Explored cloud computing with a focus on security practices and infrastructure deployment on AWS.",
       "tags": [
@@ -60,31 +36,10 @@
         "Terraform",
         "Docker",
         "Vue.js"
-      ],
-      "projects": [
-        {
-          "name": "AI Guardian",
-          "desc": "A chat-based application for creating and managing AWS WAF configurations.",
-          "status": "Done"
-        }
-      ],
-      "internships": [
-        {
-          "company": "eCloudValley",
-          "role": "Cloud Security Intern",
-          "date": "Jul 2024 - Oct 2024"
-        }
-      ],
-      "certificates": [
-        {
-          "name": "AWS Certified Cloud Practitioner",
-          "date": "June 27, 2024",
-          "link": "https://www.credly.com/badges/16e72be6-ff31-48a1-9630-11b53a7f91f7/linked_in_profile"
-        }
       ]
     },
     {
-      "title": "2022 - Early 2024",
+      "time": "2022 - Early 2024",
       "heading": "Cyber Security",
       "content": "Focused on web security fundamentals and participated in CTF competitions to sharpen practical problem-solving skills.",
       "tags": [
@@ -92,17 +47,10 @@
         "Linux Command Line Operation",
         "Pico CTF",
         "Snyc CTF"
-      ],
-      "certificates": [
-        {
-          "name": "Certified in Cybersecurity (CC)",
-          "date": "January 31, 2024",
-          "link": "https://www.credly.com/badges/4dfb3010-34d1-4629-bba8-fad54779d572/linked_in_profile"
-        }
       ]
     },
     {
-      "title": "2021",
+      "time": "2021",
       "heading": "The Beginning: Logic & OOP Foundations",
       "content": "Started my software engineering journey with C++, learning the fundamentals of logic and object-oriented programming.",
       "tags": [

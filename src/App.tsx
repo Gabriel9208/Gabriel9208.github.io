@@ -16,7 +16,7 @@ function Navigation() {
       <div className="flex justify-center items-center gap-8">
         <Link to="/" className={linkClass("/")}>Home</Link>
         <Link to="/exploration" className={linkClass("/exploration")}>Explorations</Link>
-        <Link to="/recent-work" className={linkClass("/recent-work")}>Recent Works</Link>
+        <Link to="/recent-work" className={linkClass("/recent-work")}>Currently Working On</Link>
       </div>
     </nav>
   );

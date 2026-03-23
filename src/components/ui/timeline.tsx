@@ -4,20 +4,58 @@ import {
   motion,
   AnimatePresence,
 } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+export type DataItem = {
+  title: string;
+  description?: string;
+  link?: string;
+  tags?: string[];
+  highlight?: boolean;
+  time?: string;
+  recent?: boolean;
+  status?: string;
+};
+
+export type ExperienceItem = DataItem & {
+  displayDate?: string;
+};
 
 interface TimelineEntry {
-  title: string;
+  time: string;
   heading: string;
-  content: React.ReactNode;
-  tags?: string[];
-  projects?: { name: string; link?: string; desc?: string; status?: string }[];
-  certificates?: { name: string; date?: string; link?: string }[];
-  internships?: { company: string; role: string; date?: string }[];
+  content: string;
+  tags: string[];
 }
 
-const TimelineItem = ({ item }: { item: TimelineEntry }) => {
+interface TimelineProps {
+  data: TimelineEntry[];
+  projects: DataItem[];
+  certificates: DataItem[];
+  experience: ExperienceItem[];
+  competitions: DataItem[];
+}
+
+const TimelineItem = ({
+  item,
+  periodProjects,
+  periodCerts,
+  periodExperience,
+  periodCompetitions,
+}: {
+  item: TimelineEntry;
+  periodProjects: DataItem[];
+  periodCerts: DataItem[];
+  periodExperience: ExperienceItem[];
+  periodCompetitions: DataItem[];
+}) => {
   const [isHovered, setIsHovered] = useState(false);
+
+  const hasExpandableContent =
+    periodExperience.length > 0 ||
+    periodProjects.length > 0 ||
+    periodCompetitions.length > 0 ||
+    periodCerts.length > 0;
 
   return (
     <div
@@ -33,21 +71,21 @@ const TimelineItem = ({ item }: { item: TimelineEntry }) => {
         </div>
         <h3 className="hidden md:block pl-20 font-bold transition-colors duration-300"
             style={{ fontSize: 48, color: isHovered ? '#fff' : '#555' }}>
-          {item.title}
+          {item.time}
         </h3>
       </div>
 
       <div className="relative pl-20 pr-4 md:pl-4 w-full">
         <h3 className="md:hidden block mb-4 text-left font-bold transition-colors duration-300"
             style={{ fontSize: 48, color: isHovered ? '#fff' : '#555' }}>
-          {item.title}
+          {item.time}
         </h3>
         <h4 className="font-bold mb-6 transition-colors duration-300"
             style={{ fontSize: 32, color: isHovered ? '#0A84FF' : '#fff' }}>
           {item.heading}
         </h4>
         <div className="mb-8 font-light leading-relaxed"
-             style={{ fontSize: 17, color: '#777' }}>
+             style={{ fontSize: 17, color: '#777', whiteSpace: 'pre-line' }}>
           {item.content}
         </div>
         <div className="flex flex-wrap gap-2 mb-4">
@@ -63,70 +101,71 @@ const TimelineItem = ({ item }: { item: TimelineEntry }) => {
         </div>
 
         <AnimatePresence>
-          {isHovered &&
-            (item.projects || item.certificates || item.internships) && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3, ease: "anticipate" }}
-                className="overflow-hidden"
-              >
-                <div className="pt-6 pb-2 flex flex-col gap-8 mt-4" style={{ borderTop: '1px solid #1e1e1e' }}>
-                  {/* Internships Section */}
-                  {item.internships && item.internships.length > 0 && (
-                    <div>
-                      <h5 className="font-bold uppercase tracking-widest mb-4 flex items-center gap-2" style={{ color: '#fff', fontSize: 14 }}>
-                        <span className="w-2 h-2 rounded-full bg-blue-500"></span> Internships
-                      </h5>
-                      <div className="flex flex-col gap-4">
-                        {item.internships.map((intern, i) => (
-                          <div
-                            key={i}
-                            className="rounded-xl p-5 transition-colors"
-                            style={{ background: '#1a1a1a', border: '1px solid #2a2a2a' }}
-                          >
-                            <div className="flex justify-between items-start mb-2">
-                              <strong style={{ color: '#fff', fontSize: 18 }}>{intern.role}</strong>
-                              {intern.date && (
-                                <span className="font-mono px-2 py-1 rounded" style={{ fontSize: 12, background: '#222', color: '#888' }}>
-                                  {intern.date}
-                                </span>
-                              )}
-                            </div>
-                            <div style={{ fontSize: 16, color: '#777' }}>
-                              {intern.company}
-                            </div>
+          {isHovered && hasExpandableContent && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "anticipate" }}
+              className="overflow-hidden"
+            >
+              <div className="pt-6 pb-2 flex flex-col gap-8 mt-4" style={{ borderTop: '1px solid #1e1e1e' }}>
+                
+                {/* 1. Experience Section */}
+                {periodExperience.length > 0 && (
+                  <div>
+                    <h5 className="font-bold uppercase tracking-widest mb-4 flex items-center gap-2" style={{ color: '#fff', fontSize: 14 }}>
+                      <span className="w-2 h-2 rounded-full" style={{ background: '#3B82F6' }}></span> Experience
+                    </h5>
+                    <div className="flex flex-col gap-4">
+                      {periodExperience.map((intern, i) => (
+                        <div
+                          key={i}
+                          className="rounded-xl p-5 transition-colors"
+                          style={{ background: '#1a1a1a', border: '1px solid #2a2a2a' }}
+                        >
+                          <div className="flex justify-between items-start mb-2">
+                            <strong style={{ color: '#fff', fontSize: 18 }}>{intern.title}</strong>
+                            {intern.displayDate && (
+                              <span className="font-mono px-2 py-1 rounded" style={{ fontSize: 12, background: '#222', color: '#888' }}>
+                                {intern.displayDate}
+                              </span>
+                            )}
                           </div>
-                        ))}
-                      </div>
+                          <div style={{ fontSize: 16, color: '#777' }}>
+                            {intern.description}
+                          </div>
+                        </div>
+                      ))}
                     </div>
-                  )}
+                  </div>
+                )}
 
-                  {/* Projects Section */}
-                  {item.projects && item.projects.length > 0 && (
-                    <div>
-                      <h5 className="font-bold uppercase tracking-widest mb-4 flex items-center gap-2" style={{ color: '#fff', fontSize: 14 }}>
-                        <span className="w-2 h-2 rounded-full bg-green-500"></span> Projects
-                      </h5>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {item.projects.map((proj, i) => (
-                          <div
-                            key={i}
-                            className="rounded-xl p-4 transition-colors"
-                            style={{ background: '#1a1a1a', border: '1px solid #2a2a2a' }}
-                          >
-                            <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
-                              {proj.link ? (
-                                <a href={proj.link} target="_blank" rel="noreferrer" className="font-bold transition-colors hover:text-blue-400" style={{ color: '#fff', fontSize: 16 }}>
-                                  {proj.name}
-                                </a>
-                              ) : (
-                                <strong className="block font-bold" style={{ color: '#fff', fontSize: 16 }}>
-                                  {proj.name}
-                                </strong>
-                              )}
-                              {proj.status && (
+                {/* 2. Projects Section */}
+                {periodProjects.length > 0 && (
+                  <div>
+                    <h5 className="font-bold uppercase tracking-widest mb-4 flex items-center gap-2" style={{ color: '#fff', fontSize: 14 }}>
+                      <span className="w-2 h-2 rounded-full" style={{ background: '#22C55E' }}></span> Projects
+                    </h5>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {periodProjects.map((proj, i) => {
+                        const isLink = Boolean(proj.link);
+                        const Tag = isLink ? "a" : "div";
+                        const props = isLink ? { href: proj.link, target: "_blank", rel: "noreferrer" } : {};
+                        return (
+                        <Tag
+                          {...props}
+                          key={i}
+                          className={`block rounded-xl p-4 transition-colors relative ${isLink ? "hover:border-gray-500 cursor-pointer group/proj" : ""}`}
+                          style={{ background: '#1a1a1a', border: '1px solid #2a2a2a' }}
+                        >
+                          <div className="flex flex-wrap items-start gap-2 mb-2 pr-20">
+                            <strong className={`block font-bold transition-colors ${isLink ? "group-hover/proj:text-blue-400" : ""}`} style={{ color: '#fff', fontSize: 16 }}>
+                              {proj.title}
+                            </strong>
+                          </div>
+                          {proj.status && (
+                             <div className="absolute top-4 right-4">
                                 <span className="uppercase font-bold px-2 py-0.5 rounded-full whitespace-nowrap"
                                       style={{
                                         fontSize: 10,
@@ -135,51 +174,117 @@ const TimelineItem = ({ item }: { item: TimelineEntry }) => {
                                       }}>
                                   {proj.status}
                                 </span>
-                              )}
+                             </div>
+                          )}
+                          {proj.description && (
+                            <p className="leading-relaxed mb-4" style={{ fontSize: 14, color: '#777' }}>
+                              {proj.description}
+                            </p>
+                          )}
+                          {proj.tags && proj.tags.length > 0 && (
+                            <div className="flex flex-wrap gap-1 mt-auto">
+                              {proj.tags.map(t => (
+                                <span key={t} className="px-2 py-1 rounded font-medium" style={{ background: '#222', color: '#999', fontSize: 11 }}>
+                                  {t}
+                                </span>
+                              ))}
                             </div>
-                            {proj.desc && (
-                              <p className="leading-relaxed" style={{ fontSize: 14, color: '#777' }}>
-                                {proj.desc}
-                              </p>
-                            )}
-                          </div>
-                        ))}
-                      </div>
+                          )}
+                        </Tag>
+                        );
+                      })}
                     </div>
-                  )}
+                  </div>
+                )}
 
-                  {/* Certificates Section */}
-                  {item.certificates && item.certificates.length > 0 && (
-                    <div>
-                      <h5 className="font-bold uppercase tracking-widest mb-4 flex items-center gap-2" style={{ color: '#fff', fontSize: 14 }}>
-                        <span className="w-2 h-2 rounded-full bg-orange-500"></span> Certificates
-                      </h5>
-                      <div className="flex flex-wrap gap-3">
-                        {item.certificates.map((cert, i) => (
-                          <div key={i} className="flex items-center gap-2 px-4 py-2 rounded-lg" style={{ background: '#1a1a1a', border: '1px solid #2a2a2a' }}>
-                            {cert.link ? (
-                              <a href={cert.link} target="_blank" rel="noreferrer" className="font-medium transition-colors hover:text-blue-400" style={{ color: '#fff', fontSize: 14 }}>
-                                {cert.name}
-                              </a>
-                            ) : (
-                              <span className="font-medium" style={{ color: '#fff', fontSize: 14 }}>{cert.name}</span>
-                            )}
-                            {cert.date && <span className="pl-2" style={{ fontSize: 12, color: '#777', borderLeft: '1px solid #2a2a2a' }}>{cert.date}</span>}
+                {/* 3. Competitions Section */}
+                {periodCompetitions.length > 0 && (
+                  <div>
+                    <h5 className="font-bold uppercase tracking-widest mb-4 flex items-center gap-2" style={{ color: '#fff', fontSize: 14 }}>
+                      <span className="w-2 h-2 rounded-full" style={{ background: '#A855F7' }}></span> Competitions
+                    </h5>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {periodCompetitions.map((comp, i) => {
+                        const isLink = Boolean(comp.link);
+                        const Tag = isLink ? "a" : "div";
+                        const props = isLink ? { href: comp.link, target: "_blank", rel: "noreferrer" } : {};
+                        return (
+                        <Tag
+                          {...props}
+                          key={i}
+                          className={`block rounded-xl p-4 transition-colors relative ${isLink ? "hover:border-gray-500 cursor-pointer group/comp" : ""}`}
+                          style={{ background: '#1a1a1a', border: '1px solid #2a2a2a' }}
+                        >
+                          <div className="flex flex-wrap items-start gap-2 mb-2 pr-20">
+                            <strong className={`block font-bold transition-colors ${isLink ? "group-hover/comp:text-blue-400" : ""}`} style={{ color: '#fff', fontSize: 16 }}>
+                              {comp.title}
+                            </strong>
                           </div>
-                        ))}
-                      </div>
+                          {comp.status && (
+                             <div className="absolute top-4 right-4">
+                                <span className="uppercase font-bold px-2 py-0.5 rounded-full whitespace-nowrap"
+                                      style={{
+                                        fontSize: 10,
+                                        background: comp.status.toLowerCase() === 'ongoing' ? 'rgba(10,132,255,0.15)' : 'rgba(48,209,88,0.15)',
+                                        color: comp.status.toLowerCase() === 'ongoing' ? '#0A84FF' : '#30D158'
+                                      }}>
+                                  {comp.status}
+                                </span>
+                             </div>
+                          )}
+                          {comp.description && (
+                            <p className="leading-relaxed mb-4" style={{ fontSize: 14, color: '#777' }}>
+                              {comp.description}
+                            </p>
+                          )}
+                          {comp.tags && comp.tags.length > 0 && (
+                            <div className="flex flex-wrap gap-1 mt-auto">
+                              {comp.tags.map(t => (
+                                <span key={t} className="px-2 py-1 rounded font-medium" style={{ background: '#222', color: '#999', fontSize: 11 }}>
+                                  {t}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+                        </Tag>
+                        );
+                      })}
                     </div>
-                  )}
-                </div>
-              </motion.div>
-            )}
+                  </div>
+                )}
+
+                {/* 4. Certificates Section */}
+                {periodCerts.length > 0 && (
+                  <div>
+                    <h5 className="font-bold uppercase tracking-widest mb-4 flex items-center gap-2" style={{ color: '#fff', fontSize: 14 }}>
+                      <span className="w-2 h-2 rounded-full" style={{ background: '#F97316' }}></span> Certificates
+                    </h5>
+                    <div className="flex flex-wrap gap-3">
+                      {periodCerts.map((cert, i) => (
+                        <div key={i} className="flex items-center gap-2 px-4 py-2 rounded-lg" style={{ background: '#1a1a1a', border: '1px solid #2a2a2a' }}>
+                          {cert.link ? (
+                            <a href={cert.link} target="_blank" rel="noreferrer" className="font-medium transition-colors hover:text-blue-400" style={{ color: '#fff', fontSize: 14 }}>
+                              {cert.title}
+                            </a>
+                          ) : (
+                            <span className="font-medium" style={{ color: '#fff', fontSize: 14 }}>{cert.title}</span>
+                          )}
+                          {cert.description && <span className="pl-2" style={{ fontSize: 12, color: '#777', borderLeft: '1px solid #2a2a2a' }}>{cert.description}</span>}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          )}
         </AnimatePresence>
       </div>
     </div>
   );
 };
 
-export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
+export const Timeline = ({ data, projects, certificates, experience, competitions }: TimelineProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
@@ -202,9 +307,23 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   return (
     <div className="w-full font-sans md:px-10" ref={containerRef} style={{ background: '#000' }}>
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
-        {data.map((item, index) => (
-          <TimelineItem key={index} item={item} />
-        ))}
+        {data.map((item, index) => {
+           const periodProjects = projects.filter((p) => p.time === item.time);
+           const periodCerts = certificates.filter((c) => c.time === item.time);
+           const periodExperience = experience.filter((e) => e.time === item.time);
+           const periodCompetitions = competitions.filter((c) => c.time === item.time);
+
+           return (
+             <TimelineItem 
+                key={index} 
+                item={item} 
+                periodProjects={periodProjects}
+                periodCerts={periodCerts}
+                periodExperience={periodExperience}
+                periodCompetitions={periodCompetitions}
+             />
+           )
+        })}
         <div
           style={{
             height: height + "px",

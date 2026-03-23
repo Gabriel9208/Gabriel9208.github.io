@@ -4,6 +4,8 @@ import { BentoGrid, BentoCell } from "../components/ui/bento-grid";
 import skillsData from "../data/skills.json";
 import projectsData from "../data/projects.json";
 import journeyData from "../data/journey.json";
+import certificatesData from "../data/certificates.json";
+import experienceData from "../data/experience.json";
 
 function resolveIcon(name: string, className: string) {
   const Icon = (LucideIcons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[name];
@@ -11,22 +13,10 @@ function resolveIcon(name: string, className: string) {
 }
 
 export default function Welcome() {
-  const fromProjects = projectsData.items.find((p: any) => p.highlight === true);
-  const fromJourney = journeyData.entries
-    .flatMap((e: any) => e.projects ?? [])
-    .find((p: any) => p.highlight === true);
-  const raw = fromProjects ?? fromJourney ?? projectsData.items[0];
-
-  const displayProject = {
-    title: (raw as any).title ?? (raw as any).name,
-    description: (raw as any).description ?? (raw as any).desc ?? "",
-    link: raw.link ?? "",
-    tech: (raw as any).tech ?? [],
-    status: raw.status,
-  };
-
-  const allCerts = journeyData.entries.flatMap((e: any) => e.certificates ?? []);
-  const allExperience = journeyData.entries.flatMap((e: any) => e.internships ?? []);
+  const displayProject = projectsData.find((p: any) => p.highlight) ?? projectsData[0];
+  const allCerts = certificatesData;
+  const allExperience = experienceData;
+  const recentProjects = projectsData.filter((p: any) => p.recent);
 
   const Label = ({ text }: { text: string }) => (
     <p style={{ fontSize: 13, color: '#555', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 8 }}>
@@ -122,7 +112,7 @@ export default function Welcome() {
             </div>
             <p style={{ fontSize: 16, color: '#777', marginBottom: 16 }}>{displayProject.description}</p>
             <div style={{ marginTop: 'auto', display: 'flex', flexWrap: 'wrap', gap: 4 }}>
-              {displayProject.tech.map((t: string) => <Tag key={t} text={t} />)}
+              {displayProject.tags?.map((t: string) => <Tag key={t} text={t} />)}
             </div>
           </BentoCell>
 
@@ -137,10 +127,10 @@ export default function Welcome() {
                   <div key={i} style={{ fontSize: 16 }}>
                     {cert.link ? (
                       <a href={cert.link} target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'none' }} className="truncate block hover:text-blue-400 transition-colors">
-                        {cert.name}
+                        {cert.title}
                       </a>
                     ) : (
-                      <span style={{ color: '#fff' }} className="truncate block">{cert.name}</span>
+                      <span style={{ color: '#fff' }} className="truncate block">{cert.title}</span>
                     )}
                   </div>
                 ))}
@@ -158,8 +148,8 @@ export default function Welcome() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                 {allExperience.slice(0, 2).map((exp: any, i: number) => (
                   <div key={i}>
-                    <p style={{ fontSize: 16, fontWeight: 700, color: '#fff' }} className="truncate">{exp.role}</p>
-                    <p style={{ fontSize: 14, color: '#777', marginTop: 4 }} className="truncate">{exp.company}{exp.date ? ` · ${exp.date}` : ""}</p>
+                    <p style={{ fontSize: 16, fontWeight: 700, color: '#fff' }} className="truncate">{exp.title}</p>
+                    <p style={{ fontSize: 14, color: '#777', marginTop: 4 }} className="truncate">{exp.description}{exp.displayDate ? ` · ${exp.displayDate}` : ""}</p>
                   </div>
                 ))}
                 {allExperience.length > 2 && <p style={{ fontSize: 16, color: '#444', marginTop: 4 }}>+{allExperience.length - 2} more</p>}
@@ -175,7 +165,7 @@ export default function Welcome() {
                 <div key={i} style={{ display: 'flex', flexDirection: 'column' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
                     <div style={{ width: 8, height: 8, borderRadius: '50%', background: i === 0 ? '#0A84FF' : '#2a2a2a' }} />
-                    <span style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#555' }}>{entry.title}</span>
+                    <span style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#555' }}>{entry.time}</span>
                   </div>
                   <p style={{ fontSize: 16, fontWeight: 500, color: '#ccc', paddingLeft: 16 }} className="truncate">{entry.heading}</p>
                 </div>
@@ -187,18 +177,18 @@ export default function Welcome() {
           <BentoCell className="md:col-[2/4] md:row-[4/5]" href="/recent-work">
             <Label text="recent work &rarr;" />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 flex-grow">
-              {projectsData.items.slice(0, 2).map((proj: any, i: number) => (
+              {recentProjects.slice(0, 2).map((proj: any, i: number) => (
                 <div key={i} className={`flex flex-col ${i === 0 ? "sm:border-r" : ""}`} style={{ borderColor: '#1e1e1e', paddingRight: i === 0 ? 24 : 0 }}>
                   <h4 style={{ fontSize: 20, fontWeight: 600, color: '#fff', marginBottom: 12 }}>{proj.title}</h4>
                   <div style={{ marginTop: 'auto', display: 'flex', flexWrap: 'wrap', gap: 4 }}>
-                    {proj.tech?.slice(0, 2).map((t: string) => <Tag key={t} text={t} />)}
+                    {proj.tags?.slice(0, 2).map((t: string) => <Tag key={t} text={t} />)}
                   </div>
                 </div>
               ))}
             </div>
-            {projectsData.items.length > 2 && (
+            {recentProjects.length > 2 && (
               <p style={{ fontSize: 16, color: '#444', marginTop: 16, paddingTop: 16, borderTop: '1px solid #1e1e1e' }}>
-                +{projectsData.items.length - 2} more &rarr;
+                +{recentProjects.length - 2} more &rarr;
               </p>
             )}
           </BentoCell>

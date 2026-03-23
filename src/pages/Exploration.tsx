@@ -1,4 +1,8 @@
 import journeyData from "../data/journey.json";
+import projectsData from "../data/projects.json";
+import certificatesData from "../data/certificates.json";
+import experienceData from "../data/experience.json";
+import competitionsData from "../data/competitions.json";
 import { Timeline } from "../components/ui/timeline";
 
 export default function Exploration() {
@@ -16,6 +20,10 @@ export default function Exploration() {
       <div className="w-full">
         <Timeline
           data={journeyData.entries}
+          projects={projectsData}
+          certificates={certificatesData}
+          experience={experienceData}
+          competitions={competitionsData}
         />
       </div>
     </div>

@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Multi-View Pig Recognition Challenge",
+        "description": "Develop computer vision models to classify pig postures from 2D images captured under realistic farm conditions, including occlusion, lighting variation, multiple camera views, and pig batches.",
+        "link": "",
+        "tags": [
+            "ConvNext",
+            "EfficientNet",
+            "Albumentations",
+            "Ensemble Learning",
+            "Test Time Augmentation"
+        ],
+        "highlight": false,
+        "time": "2026",
+        "recent": true,
+        "status": "Ongoing"
+    }
+]
