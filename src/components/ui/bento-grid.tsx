@@ -10,11 +10,8 @@ interface BentoCellProps {
 
 export function BentoGrid({ children }: { children: React.ReactNode }) {
   return (
-    <div style={{ boxShadow: '0 0 0 1px #1e1e1e', borderRadius: 24 }} className="bg-black">
-      <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] [&>*:first-child]:rounded-t-[24px] md:[&>*:first-child]:rounded-tl-[24px] md:[&>*:nth-child(2)]:rounded-tr-[24px] [&>*:last-child]:rounded-b-[24px] md:[&>*:last-child]:rounded-br-[24px] md:[&>*:nth-child(6)]:rounded-bl-[24px]"
-        style={{ gap: 2 }}>
-        {children}
-      </div>
+    <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-6">
+      {children}
     </div>
   );
 }
@@ -56,6 +53,8 @@ export function BentoCell({ className = "", children, href, external }: BentoCel
       transformStyle: 'preserve-3d' as const,
       display: 'flex',
       flexDirection: 'column' as const,
+      borderRadius: 24,
+      border: '1px solid #1e1e1e',
     },
     className: `bento-cell ${className}`,
   };
