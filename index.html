@@ -8,15 +8,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <div id="error-log" style="color: red; position: fixed; top: 0; left: 0; z-index: 9999; font-weight: bold; background: rgba(255,255,255,0.8); padding: 10px;"></div>
-    <script>
-      window.onerror = function(message, source, lineno, colno, error) {
-        document.getElementById('error-log').innerHTML += message + '<br/>';
-      };
-      window.onunhandledrejection = function(event) {
-        document.getElementById('error-log').innerHTML += event.reason + '<br/>';
-      };
-    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -291,8 +291,14 @@ export const Timeline = ({ data, projects, certificates, experience, competition
 
   useEffect(() => {
     if (ref.current) {
-      const rect = ref.current.getBoundingClientRect();
-      setHeight(rect.height);
+      const resizeObserver = new ResizeObserver(() => {
+        if (ref.current) {
+          const rect = ref.current.getBoundingClientRect();
+          setHeight(rect.height);
+        }
+      });
+      resizeObserver.observe(ref.current);
+      return () => resizeObserver.disconnect();
     }
   }, [ref]);
 
