@@ -50,7 +50,7 @@
     "status": "Done"
   },
   {
-    "title": "Texture-Mapping",
+    "title": "TexMapper3D",
     "description": "A C++ application for viewing 3D meshes and performing texture mapping and painting. Built with OpenGL for rendering and ImGui for the interface, it supports face selection, patch creation, texture mapping, and direct texture painting on meshes.",
     "link": "https://github.com/Gabriel9208/Texture-Mapping.git",
     "tags": [
