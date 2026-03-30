@@ -43,7 +43,7 @@
   },
   {
     "title": "CS231n",
-    "description": "Implemented U-Net and ResNet34-based U-Net for binary semantic segmentation, trained on the Oxford-IIIT Pet Dataset to classify pets within images.",
+    "description": "From backpropagation to CNN to RNN to Transformers to Diffusion models and finally Vision-Language Models.",
     "link": "https://github.com/Gabriel9208/Deep-Learning-for-Computer-Vision-Assignment.git",
     "tags": [
       "Backprop with Numpy",
