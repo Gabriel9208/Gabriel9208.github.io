@@ -1,0 +1,59 @@
+[
+  {
+    "title": "Muu",
+    "subtitle": "Line bot & LED controlling through VJ software",
+    "period": "Spring 2025",
+    "status": "Exhibited",
+    "description": "A large-scale interactive installation — 5m long, 1m+ tall — built around the concept of an emotional creature. Muu offers a space for people to sit with emotions they can't share elsewhere, paired with a Line chatbot for anonymous expression and mood check-ins.",
+    "myRole": "Responsible for all software and electrical work: Line bot development, LED lighting automation software, and full hardware system design.",
+    "contributions": [
+      "Line Bot — mood quiz flow, anonymous message relay",
+      "VJ software operation — pattern generation synced to sensor input",
+      "Hardware system design — wiring schema, power distribution, controller config"
+    ],
+    "team": [
+      {
+        "name": "葉衍巖",
+        "dept": "Computer Science",
+        "role": "Software & Hardware"
+      },
+      {
+        "name": "賴*予",
+        "dept": "Commercial Design",
+        "role": "Visual Design"
+      },
+      {
+        "name": "蔡*恩",
+        "dept": "Commercial Design",
+        "role": "Visual Design"
+      },
+      {
+        "name": "鄭*銓",
+        "dept": "Industrial Design",
+        "role": "Structure & Assembly"
+      },
+      {
+        "name": "黃*鈞",
+        "dept": "Industrial Design",
+        "role": "Structure & Soldering"
+      },
+      {
+        "name": "陳*瑀",
+        "dept": "Industrial Design",
+        "role": "Structure & Soldering"
+      }
+    ],
+    "tags": [
+      "Interactive Art",
+      "WS2812",
+      "Line Bot",
+      "Hardware Integration",
+      "LED Controller"
+    ],
+    "link": "",
+    "backgroundImage": "/images/muu-bg.jpg",
+    "diagrams": [
+      { "src": "/images/diagram.png", "caption": "Working Record! Efforts from all team members" }
+    ]
+  }
+]

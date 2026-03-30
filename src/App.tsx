@@ -2,6 +2,7 @@ import { Routes, Route, HashRouter, Link, useLocation } from "react-router-dom";
 import Welcome from "./pages/Welcome";
 import Exploration from "./pages/Exploration";
 import RecentWork from "./pages/RecentWork";
+import CrossDomain from "./pages/CrossDomain";
 
 function Navigation() {
   const { pathname } = useLocation();
@@ -17,6 +18,7 @@ function Navigation() {
         <Link to="/" className={linkClass("/")}>Home</Link>
         <Link to="/exploration" className={linkClass("/exploration")}>Explorations</Link>
         <Link to="/recent-work" className={linkClass("/recent-work")}>Currently Working On</Link>
+        <Link to="/cross-domain" className={linkClass("/cross-domain")}>Cross-Domain</Link>
       </div>
     </nav>
   );
@@ -32,6 +34,7 @@ function App() {
             <Route path="/" element={<Welcome />} />
             <Route path="/exploration" element={<Exploration />} />
             <Route path="/recent-work" element={<RecentWork />} />
+            <Route path="/cross-domain" element={<CrossDomain />} />
           </Routes>
         </main>
       </div>
