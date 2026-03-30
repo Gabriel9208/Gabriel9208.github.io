@@ -43,7 +43,7 @@ export default function Welcome() {
             <p style={{ fontSize: 26, color: '#777' }}>CS Student · ML & CV</p>
             <Divider />
             <p style={{ fontSize: 17, color: '#777', lineHeight: 1.6 }}>
-              Building foundations in machine learning and computer vision.
+              Building foundations in machine learning and computer vision. A dance enthusiast.
             </p>
             <div style={{ marginTop: 'auto', paddingTop: 20, display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {[
