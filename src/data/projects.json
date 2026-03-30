@@ -39,17 +39,6 @@
     "recent": true
   },
   {
-    "title": "CG-Robot",
-    "description": "A C++ OpenGL application for rendering 3D scenes with support for animation, visual effects, and a graphical user interface. The project is structured around a clear separation of application logic, rendering, scene management, and effects.",
-    "link": "https://github.com/Galeta-Program/CG-Robot.git",
-    "tags": [
-      "C++",
-      "OpenGL"
-    ],
-    "time": "First half of year 2025",
-    "status": "Done"
-  },
-  {
     "title": "TexMapper3D",
     "description": "A C++ application for viewing 3D meshes and performing texture mapping and painting. Built with OpenGL for rendering and ImGui for the interface, it supports face selection, patch creation, texture mapping, and direct texture painting on meshes.",
     "link": "https://github.com/Gabriel9208/Texture-Mapping.git",
@@ -57,6 +46,17 @@
       "C++",
       "OpenGL",
       "ImGui"
+    ],
+    "time": "First half of year 2025",
+    "status": "Done"
+  },
+  {
+    "title": "CG-Robot",
+    "description": "A C++ OpenGL application for rendering 3D scenes with support for animation, visual effects, and a graphical user interface. The project is structured around a clear separation of application logic, rendering, scene management, and effects.",
+    "link": "https://github.com/Galeta-Program/CG-Robot.git",
+    "tags": [
+      "C++",
+      "OpenGL"
     ],
     "time": "First half of year 2025",
     "status": "Done"
