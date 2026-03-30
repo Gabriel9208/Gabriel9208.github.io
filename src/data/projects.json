@@ -29,6 +29,32 @@
     "status": "Done"
   },
   {
+    "title": "PointNet Implementation",
+    "description": "A fundamental yet powerful neural network processing point cloud data.",
+    "link": "https://github.com/Gabriel9208/CS479-Assignment-PointNet.git",
+    "tags": [
+      "PointNet",
+      "Point Cloud",
+      "3D Vision"
+    ],
+    "time": "2026",
+    "recent": true,
+    "status": "Ongoing"
+  },
+  {
+    "title": "CS231n",
+    "description": "Implemented U-Net and ResNet34-based U-Net for binary semantic segmentation, trained on the Oxford-IIIT Pet Dataset to classify pets within images.",
+    "link": "https://github.com/Gabriel9208/Deep-Learning-for-Computer-Vision-Assignment.git",
+    "tags": [
+      "Backprop with Numpy",
+      "Transformer",
+      "Diffusion"
+    ],
+    "time": "2026",
+    "recent": true,
+    "status": "Ongoing"
+  },
+  {
     "title": "Gabriel9208.github.io",
     "description": "This very website! Narrowing down the vague idea of a portfolio through vibe coding to a concrete spec driven development process.",
     "link": "#",
