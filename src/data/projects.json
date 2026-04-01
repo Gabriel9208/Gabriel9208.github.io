@@ -38,7 +38,7 @@
       "ResNet"
     ],
     "time": "2026",
-    "recent": true,
+    "recent": false,
     "status": "Done"
   },
   {
@@ -51,7 +51,7 @@
       "Diffusion"
     ],
     "time": "2026",
-    "recent": true,
+    "recent": false,
     "status": "Done"
   },
   {
