@@ -47,8 +47,12 @@
     "link": "https://github.com/Gabriel9208/Deep-Learning-for-Computer-Vision-Assignment.git",
     "tags": [
       "Backprop with Numpy",
+      "CNN",
+      "RNN",
       "Transformer",
-      "Diffusion"
+      "SimCLR",
+      "Diffusion",
+      "CLIP"
     ],
     "time": "2026",
     "recent": false,
