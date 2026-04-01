@@ -15,6 +15,19 @@
     "status": "Ongoing"
   },
   {
+    "title": "PointNet Implementation",
+    "description": "A fundamental yet powerful neural network processing point cloud data.",
+    "link": "https://github.com/Gabriel9208/CS479-Assignment-PointNet.git",
+    "tags": [
+      "PointNet",
+      "Point Cloud",
+      "3D Vision"
+    ],
+    "time": "2026",
+    "recent": true,
+    "status": "Ongoing"
+  },
+  {
     "title": "Binary Semantic Segmentation",
     "description": "Implemented U-Net and ResNet34-based U-Net for binary semantic segmentation, trained on the Oxford-IIIT Pet Dataset to classify pets within images.",
     "link": "https://github.com/Gabriel9208/Binary-Semantic-Segmentation",
@@ -29,19 +42,6 @@
     "status": "Done"
   },
   {
-    "title": "PointNet Implementation",
-    "description": "A fundamental yet powerful neural network processing point cloud data.",
-    "link": "https://github.com/Gabriel9208/CS479-Assignment-PointNet.git",
-    "tags": [
-      "PointNet",
-      "Point Cloud",
-      "3D Vision"
-    ],
-    "time": "2026",
-    "recent": true,
-    "status": "Ongoing"
-  },
-  {
     "title": "CS231n",
     "description": "From backpropagation to CNN to RNN to Transformers to Diffusion models and finally Vision-Language Models.",
     "link": "https://github.com/Gabriel9208/Deep-Learning-for-Computer-Vision-Assignment.git",
@@ -52,7 +52,7 @@
     ],
     "time": "2026",
     "recent": true,
-    "status": "Ongoing"
+    "status": "Done"
   },
   {
     "title": "Gabriel9208.github.io",
