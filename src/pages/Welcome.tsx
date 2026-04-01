@@ -39,7 +39,7 @@ export default function Welcome() {
 
           {/* Hero */}
           <BentoCell className="md:col-[1/2] md:row-[1/3]">
-            <h1 style={{ fontSize: 72, fontWeight: 700, color: '#fff', letterSpacing: -1.5 }}>Gabriel</h1>
+            <h1 style={{ fontSize: 72, fontWeight: 700, color: '#fff', letterSpacing: -1.5 }}>Yen-Yen Yeh</h1>
             <p style={{ fontSize: 26, color: '#777' }}>CS Student · ML & CV</p>
             <Divider />
             <p style={{ fontSize: 17, color: '#777', lineHeight: 1.6 }}>
