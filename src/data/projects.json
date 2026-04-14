@@ -15,7 +15,7 @@
   },
   {
     "title": "SPATIUM",
-    "description": "SPATIUM is a real-time 3D Gaussian Splatting viewer built from scratch in C++ and CUDA.",
+    "description": "A real-time 3D Gaussian Splatting viewer built from scratch in C++ and CUDA.",
     "link": "https://github.com/Gabriel9208/SPATIUM",
     "tags": [
       "C++",
