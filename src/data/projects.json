@@ -15,6 +15,20 @@
     "status": "Ongoing"
   },
   {
+    "title": "SPATIUM",
+    "description": "SPATIUM is a real-time 3D Gaussian Splatting viewer built from scratch in C++ and CUDA.",
+    "link": "https://github.com/Gabriel9208/SPATIUM",
+    "tags": [
+      "C++",
+      "CUDA",
+      "3D Gaussian Splatting"
+    ],
+    "highlight": true,
+    "time": "2026",
+    "recent": true,
+    "status": "Ongoing"
+  },
+  {
     "title": "PointNet Implementation",
     "description": "A fundamental yet powerful neural network processing point cloud data.",
     "link": "https://github.com/Gabriel9208/CS479-Assignment-PointNet.git",
