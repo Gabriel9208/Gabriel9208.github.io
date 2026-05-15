@@ -2,7 +2,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import * as LucideIcons from "lucide-react";
 import { BentoGrid, BentoCell } from "../components/ui/bento-grid";
 import skillsData from "../data/skills.json";
-import projectsData from "../data/projects.json";
+//import projectsData from "../data/projects.json";
 import journeyData from "../data/journey.json";
 import certificatesData from "../data/certificates.json";
 import experienceData from "../data/experience.json";
