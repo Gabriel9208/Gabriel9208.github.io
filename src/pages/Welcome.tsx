@@ -13,10 +13,10 @@ function resolveIcon(name: string, className: string) {
 }
 
 export default function Welcome() {
-  const displayProject = projectsData.find((p: any) => p.highlight) ?? projectsData[0];
+  {/*const displayProject = projectsData.find((p: any) => p.highlight) ?? projectsData[0];*/}
   const allCerts = certificatesData;
   const allExperience = experienceData;
-  const recentProjects = projectsData.filter((p: any) => p.recent);
+  {/*const recentProjects = projectsData.filter((p: any) => p.recent);*/)
 
   const Label = ({ text }: { text: string }) => (
     <p style={{ fontSize: 13, color: '#555', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 8 }}>
@@ -24,11 +24,11 @@ export default function Welcome() {
     </p>
   );
 
-  const Tag = ({ text }: { text: string }) => (
+  {/*const Tag = ({ text }: { text: string }) => (
     <span style={{ fontSize: 14, padding: '4px 12px', borderRadius: 8, background: '#1a1a1a', border: '1px solid #2a2a2a', color: '#777', margin: 2, display: 'inline-block' }}>
       {text}
     </span>
-  );
+  ); */}
 
   const Divider = () => <div style={{ width: '100%', height: 1, background: '#1e1e1e', margin: '12px 0' }} />;
 
