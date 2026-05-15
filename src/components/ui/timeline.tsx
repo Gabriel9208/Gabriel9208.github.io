@@ -31,6 +31,7 @@ interface TimelineEntry {
 interface TimelineProps {
   data: TimelineEntry[];
   projects: DataItem[];
+  assignments: DataItem[];
   certificates: DataItem[];
   experience: ExperienceItem[];
   competitions: DataItem[];
@@ -39,12 +40,14 @@ interface TimelineProps {
 const TimelineItem = ({
   item,
   periodProjects,
+  periodAssignments,
   periodCerts,
   periodExperience,
   periodCompetitions,
 }: {
   item: TimelineEntry;
   periodProjects: DataItem[];
+  periodAssignments: DataItem[];
   periodCerts: DataItem[];
   periodExperience: ExperienceItem[];
   periodCompetitions: DataItem[];
@@ -54,6 +57,7 @@ const TimelineItem = ({
   const hasExpandableContent =
     periodExperience.length > 0 ||
     periodProjects.length > 0 ||
+    periodAssignments.length > 0 ||
     periodCompetitions.length > 0 ||
     periodCerts.length > 0;
 
@@ -110,7 +114,7 @@ const TimelineItem = ({
               className="overflow-hidden"
             >
               <div className="pt-6 pb-2 flex flex-col gap-8 mt-4" style={{ borderTop: '1px solid #1e1e1e' }}>
-                
+
                 {/* 1. Experience Section */}
                 {periodExperience.length > 0 && (
                   <div>
@@ -153,51 +157,107 @@ const TimelineItem = ({
                         const Tag = isLink ? "a" : "div";
                         const props = isLink ? { href: proj.link, target: "_blank", rel: "noreferrer" } : {};
                         return (
-                        <Tag
-                          {...props}
-                          key={i}
-                          className={`block rounded-xl p-4 transition-colors relative ${isLink ? "hover:border-gray-500 cursor-pointer group/proj" : ""}`}
-                          style={{ background: '#1a1a1a', border: '1px solid #2a2a2a' }}
-                        >
-                          <div className="flex flex-wrap items-start gap-2 mb-2 pr-20">
-                            <strong className={`block font-bold transition-colors ${isLink ? "group-hover/proj:text-blue-400" : ""}`} style={{ color: '#fff', fontSize: 16 }}>
-                              {proj.title}
-                            </strong>
-                          </div>
-                          {proj.status && (
-                             <div className="absolute top-4 right-4">
+                          <Tag
+                            {...props}
+                            key={i}
+                            className={`block rounded-xl p-4 transition-colors relative ${isLink ? "hover:border-gray-500 cursor-pointer group/proj" : ""}`}
+                            style={{ background: '#1a1a1a', border: '1px solid #2a2a2a' }}
+                          >
+                            <div className="flex flex-wrap items-start gap-2 mb-2 pr-20">
+                              <strong className={`block font-bold transition-colors ${isLink ? "group-hover/proj:text-blue-400" : ""}`} style={{ color: '#fff', fontSize: 16 }}>
+                                {proj.title}
+                              </strong>
+                            </div>
+                            {proj.status && (
+                              <div className="absolute top-4 right-4">
                                 <span className="uppercase font-bold px-2 py-0.5 rounded-full whitespace-nowrap"
-                                      style={{
-                                        fontSize: 10,
-                                        background: proj.status.toLowerCase() === 'ongoing' ? 'rgba(10,132,255,0.15)' : 'rgba(48,209,88,0.15)',
-                                        color: proj.status.toLowerCase() === 'ongoing' ? '#0A84FF' : '#30D158'
-                                      }}>
+                                  style={{
+                                    fontSize: 10,
+                                    background: proj.status.toLowerCase() === 'ongoing' ? 'rgba(10,132,255,0.15)' : 'rgba(48,209,88,0.15)',
+                                    color: proj.status.toLowerCase() === 'ongoing' ? '#0A84FF' : '#30D158'
+                                  }}>
                                   {proj.status}
                                 </span>
-                             </div>
-                          )}
-                          {proj.description && (
-                            <p className="leading-relaxed mb-4" style={{ fontSize: 14, color: '#777' }}>
-                              {proj.description}
-                            </p>
-                          )}
-                          {proj.tags && proj.tags.length > 0 && (
-                            <div className="flex flex-wrap gap-1 mt-auto">
-                              {proj.tags.map(t => (
-                                <span key={t} className="px-2 py-1 rounded font-medium" style={{ background: '#222', color: '#999', fontSize: 11 }}>
-                                  {t}
-                                </span>
-                              ))}
-                            </div>
-                          )}
-                        </Tag>
+                              </div>
+                            )}
+                            {proj.description && (
+                              <p className="leading-relaxed mb-4" style={{ fontSize: 14, color: '#777' }}>
+                                {proj.description}
+                              </p>
+                            )}
+                            {proj.tags && proj.tags.length > 0 && (
+                              <div className="flex flex-wrap gap-1 mt-auto">
+                                {proj.tags.map(t => (
+                                  <span key={t} className="px-2 py-1 rounded font-medium" style={{ background: '#222', color: '#999', fontSize: 11 }}>
+                                    {t}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+                          </Tag>
                         );
                       })}
                     </div>
                   </div>
                 )}
 
-                {/* 3. Competitions Section */}
+                {/* 3. Assignments Section */}
+                {periodAssignments.length > 0 && (
+                  <div>
+                    <h5 className="font-bold uppercase tracking-widest mb-4 flex items-center gap-2" style={{ color: '#fff', fontSize: 14 }}>
+                      <span className="w-2 h-2 rounded-full" style={{ background: '#FACC15' }}></span> Assignments
+                    </h5>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {periodAssignments.map((asgn, i) => {
+                        const isLink = Boolean(asgn.link);
+                        const Tag = isLink ? "a" : "div";
+                        const props = isLink ? { href: asgn.link, target: "_blank", rel: "noreferrer" } : {};
+                        return (
+                          <Tag
+                            {...props}
+                            key={i}
+                            className={`block rounded-xl p-4 transition-colors relative ${isLink ? "hover:border-gray-500 cursor-pointer group/asgn" : ""}`}
+                            style={{ background: '#1a1a1a', border: '1px solid #2a2a2a' }}
+                          >
+                            <div className="flex flex-wrap items-start gap-2 mb-2 pr-20">
+                              <strong className={`block font-bold transition-colors ${isLink ? "group-hover/asgn:text-blue-400" : ""}`} style={{ color: '#fff', fontSize: 16 }}>
+                                {asgn.title}
+                              </strong>
+                            </div>
+                            {asgn.status && (
+                              <div className="absolute top-4 right-4">
+                                <span className="uppercase font-bold px-2 py-0.5 rounded-full whitespace-nowrap"
+                                  style={{
+                                    fontSize: 10,
+                                    background: asgn.status.toLowerCase() === 'ongoing' ? 'rgba(10,132,255,0.15)' : 'rgba(48,209,88,0.15)',
+                                    color: asgn.status.toLowerCase() === 'ongoing' ? '#0A84FF' : '#30D158'
+                                  }}>
+                                  {asgn.status}
+                                </span>
+                              </div>
+                            )}
+                            {asgn.description && (
+                              <p className="leading-relaxed mb-4" style={{ fontSize: 14, color: '#777' }}>
+                                {asgn.description}
+                              </p>
+                            )}
+                            {asgn.tags && asgn.tags.length > 0 && (
+                              <div className="flex flex-wrap gap-1 mt-auto">
+                                {asgn.tags.map(t => (
+                                  <span key={t} className="px-2 py-1 rounded font-medium" style={{ background: '#222', color: '#999', fontSize: 11 }}>
+                                    {t}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+                          </Tag>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* 4. Competitions Section */}
                 {periodCompetitions.length > 0 && (
                   <div>
                     <h5 className="font-bold uppercase tracking-widest mb-4 flex items-center gap-2" style={{ color: '#fff', fontSize: 14 }}>
@@ -209,51 +269,51 @@ const TimelineItem = ({
                         const Tag = isLink ? "a" : "div";
                         const props = isLink ? { href: comp.link, target: "_blank", rel: "noreferrer" } : {};
                         return (
-                        <Tag
-                          {...props}
-                          key={i}
-                          className={`block rounded-xl p-4 transition-colors relative ${isLink ? "hover:border-gray-500 cursor-pointer group/comp" : ""}`}
-                          style={{ background: '#1a1a1a', border: '1px solid #2a2a2a' }}
-                        >
-                          <div className="flex flex-wrap items-start gap-2 mb-2 pr-20">
-                            <strong className={`block font-bold transition-colors ${isLink ? "group-hover/comp:text-blue-400" : ""}`} style={{ color: '#fff', fontSize: 16 }}>
-                              {comp.title}
-                            </strong>
-                          </div>
-                          {comp.status && (
-                             <div className="absolute top-4 right-4">
+                          <Tag
+                            {...props}
+                            key={i}
+                            className={`block rounded-xl p-4 transition-colors relative ${isLink ? "hover:border-gray-500 cursor-pointer group/comp" : ""}`}
+                            style={{ background: '#1a1a1a', border: '1px solid #2a2a2a' }}
+                          >
+                            <div className="flex flex-wrap items-start gap-2 mb-2 pr-20">
+                              <strong className={`block font-bold transition-colors ${isLink ? "group-hover/comp:text-blue-400" : ""}`} style={{ color: '#fff', fontSize: 16 }}>
+                                {comp.title}
+                              </strong>
+                            </div>
+                            {comp.status && (
+                              <div className="absolute top-4 right-4">
                                 <span className="uppercase font-bold px-2 py-0.5 rounded-full whitespace-nowrap"
-                                      style={{
-                                        fontSize: 10,
-                                        background: comp.status.toLowerCase() === 'ongoing' ? 'rgba(10,132,255,0.15)' : 'rgba(48,209,88,0.15)',
-                                        color: comp.status.toLowerCase() === 'ongoing' ? '#0A84FF' : '#30D158'
-                                      }}>
+                                  style={{
+                                    fontSize: 10,
+                                    background: comp.status.toLowerCase() === 'ongoing' ? 'rgba(10,132,255,0.15)' : 'rgba(48,209,88,0.15)',
+                                    color: comp.status.toLowerCase() === 'ongoing' ? '#0A84FF' : '#30D158'
+                                  }}>
                                   {comp.status}
                                 </span>
-                             </div>
-                          )}
-                          {comp.description && (
-                            <p className="leading-relaxed mb-4" style={{ fontSize: 14, color: '#777' }}>
-                              {comp.description}
-                            </p>
-                          )}
-                          {comp.tags && comp.tags.length > 0 && (
-                            <div className="flex flex-wrap gap-1 mt-auto">
-                              {comp.tags.map(t => (
-                                <span key={t} className="px-2 py-1 rounded font-medium" style={{ background: '#222', color: '#999', fontSize: 11 }}>
-                                  {t}
-                                </span>
-                              ))}
-                            </div>
-                          )}
-                        </Tag>
+                              </div>
+                            )}
+                            {comp.description && (
+                              <p className="leading-relaxed mb-4" style={{ fontSize: 14, color: '#777' }}>
+                                {comp.description}
+                              </p>
+                            )}
+                            {comp.tags && comp.tags.length > 0 && (
+                              <div className="flex flex-wrap gap-1 mt-auto">
+                                {comp.tags.map(t => (
+                                  <span key={t} className="px-2 py-1 rounded font-medium" style={{ background: '#222', color: '#999', fontSize: 11 }}>
+                                    {t}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+                          </Tag>
                         );
                       })}
                     </div>
                   </div>
                 )}
 
-                {/* 4. Certificates Section */}
+                {/* 5. Certificates Section */}
                 {periodCerts.length > 0 && (
                   <div>
                     <h5 className="font-bold uppercase tracking-widest mb-4 flex items-center gap-2" style={{ color: '#fff', fontSize: 14 }}>
@@ -284,7 +344,7 @@ const TimelineItem = ({
   );
 };
 
-export const Timeline = ({ data, projects, certificates, experience, competitions }: TimelineProps) => {
+export const Timeline = ({ data, projects, assignments, certificates, experience, competitions }: TimelineProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
@@ -315,15 +375,17 @@ export const Timeline = ({ data, projects, certificates, experience, competition
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
         {data.map((item, index) => {
            const periodProjects = projects.filter((p) => p.time === item.time);
+           const periodAssignments = assignments.filter((a) => a.time === item.time);
            const periodCerts = certificates.filter((c) => c.time === item.time);
            const periodExperience = experience.filter((e) => e.time === item.time);
            const periodCompetitions = competitions.filter((c) => c.time === item.time);
 
            return (
-             <TimelineItem 
-                key={index} 
-                item={item} 
+             <TimelineItem
+                key={index}
+                item={item}
                 periodProjects={periodProjects}
+                periodAssignments={periodAssignments}
                 periodCerts={periodCerts}
                 periodExperience={periodExperience}
                 periodCompetitions={periodCompetitions}

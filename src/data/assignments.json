@@ -1,0 +1,82 @@
+[
+  {
+    "title": "3D Gaussian Splatting Implementation",
+    "description": "Assignment of KAIST Machine Learning for 3D Data. Implemented key components of 3D Gaussian Splatting such as 2D covariance matrix transformation and rendering equation.",
+    "link": "https://github.com/Gabriel9208/CS479-Assignment-3DGS.git",
+    "tags": [
+      "3D Gaussian Splatting"
+    ],
+    "time": "2026",
+    "recent": false,
+    "status": "Done"
+  },
+  {
+    "title": "Diffusion Models",
+    "description": "A conditional image generation pipeline built on DDPM (training) + DDIM (inference) for the ICLEVR dataset.",
+    "link": "https://github.com/Gabriel9208/Diffusion.git",
+    "tags": [
+      "DDPM",
+      "DDIM",
+      "FiLM",
+      "CFG"
+    ],
+    "time": "2026",
+    "recent": false,
+    "status": "Done"
+  },
+  {
+    "title": "NeRF Implementation",
+    "description": "Assignment of KAIST Machine Learning for 3D Data. Implemented key components of NeRF such as stratified sampling and volume rendering.",
+    "link": "https://github.com/Gabriel9208/CS479-Assignment-NeRF.git",
+    "tags": [
+      "NeRF",
+      "Volume Rendering"
+    ],
+    "time": "2026",
+    "recent": false,
+    "status": "Done"
+  },
+  {
+    "title": "PointNet Implementation",
+    "description": "Assignment of KAIST Machine Learning for 3D Data. Implemented PointNet classification and segmentation models.",
+    "link": "https://github.com/Gabriel9208/CS479-Assignment-PointNet.git",
+    "tags": [
+      "PointNet",
+      "Point Cloud"
+    ],
+    "time": "2026",
+    "recent": false,
+    "status": "Done"
+  },
+  {
+    "title": "Binary Semantic Segmentation",
+    "description": "Implemented U-Net and ResNet34-based U-Net for binary semantic segmentation, trained on the Oxford-IIIT Pet Dataset to classify pets within images.",
+    "link": "https://github.com/Gabriel9208/Binary-Semantic-Segmentation",
+    "tags": [
+      "PyTorch",
+      "Python",
+      "U-Net",
+      "ResNet"
+    ],
+    "time": "2026",
+    "recent": false,
+    "status": "Done"
+  },
+  {
+    "title": "CS231n",
+    "description": "From backpropagation using Numpy to CNN, RNN, Transformers, Diffusion models and finally Vision-Language Models.",
+    "link": "https://github.com/Gabriel9208/Deep-Learning-for-Computer-Vision-Assignment.git",
+    "tags": [
+      "Backprop with Numpy",
+      "CNN",
+      "RNN",
+      "Transformer",
+      "SimCLR",
+      "Diffusion",
+      "CLIP"
+    ],
+    "time": "2026",
+    "recent": false,
+    "status": "Done"
+  }
+]

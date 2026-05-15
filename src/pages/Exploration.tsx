@@ -1,5 +1,6 @@
 import journeyData from "../data/journey.json";
 import projectsData from "../data/projects.json";
+import assignmentsData from "../data/assignments.json";
 import certificatesData from "../data/certificates.json";
 import experienceData from "../data/experience.json";
 import competitionsData from "../data/competitions.json";
@@ -21,6 +22,7 @@ export default function Exploration() {
         <Timeline
           data={journeyData.entries}
           projects={projectsData}
+          assignments={assignmentsData}
           certificates={certificatesData}
           experience={experienceData}
           competitions={competitionsData}

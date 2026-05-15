@@ -1,6 +1,6 @@
 [
     {
-        "title": "Multi-View Pig Recognition Challenge",
+        "title": "Multi-View Pig Recognition Challenge (35/243)",
         "description": "Develop computer vision models to classify pig postures from 2D images captured under realistic farm conditions, including occlusion, lighting variation, multiple camera views, and pig batches.",
         "link": "",
         "tags": [
@@ -14,5 +14,29 @@
         "time": "2026",
         "recent": true,
         "status": "Ongoing"
+    },
+    {
+        "title": "PicoCTF",
+        "description": "Catch the flag competition hosted by PicoCTF.",
+        "link": "",
+        "tags": [
+            "CTF",
+            "Web"
+        ],
+        "highlight": false,
+        "time": "2022 - Early 2024",
+        "recent": false,
+        "status": "Done"
+    },
+    {
+        "title": "SnycCTF",
+        "description": "Catch the flag competition hosted by Snyc.",
+        "link": "",
+        "tags": [
+        ],
+        "highlight": false,
+        "time": "2022 - Early 2024",
+        "recent": false,
+        "status": "Done"
     }
 ]

@@ -1,24 +1,23 @@
 {
   "meta": {
     "title": "Interests Explorations",
-    "subtitle": "I spent time figuring out what I actually wanted to build. I moved through cybersecurity, blockchain, and graphics programming — not always with a clear direction, but always paying attention to what resonated and what didn't. Over time, a pattern emerged: the problems that kept pulling me back were visual, three-dimensional, and mathematically grounded. That realization led me to where I am now — building foundations in machine learning and computer vision, with a growing focus on 3D vision."
+    "subtitle": "I'm interested in controllable 3D generation, building foundations in machine learning and computer vision along the way. I came here the long way around — through cybersecurity, blockchain, and graphics."
   },
   "entries": [
     {
       "time": "2026",
-      "heading": "Spacial Intelligence",
-      "content": "Focusing on deep learning architectures and computer vision. Using PyTorch to implement and experiment with neural networks while working to close the gap between mathematical theory and practical application.",
+      "heading": "ML & CV",
+      "content": "Started in computer graphics, now building foundations in deep learning and computer vision. Looking toward 3D generation.",
       "tags": [
         "Deep Learning",
         "Computer Vision",
-        "Multiview Geometry",
-        "Computer Graphics"
+        "Multiview Geometry"
       ]
     },
     {
       "time": "First half of year 2025",
       "heading": "Computer Graphics",
-      "content": "Explored the 3D graphics pipeline and real-time rendering through OpenGL and GLSL shader programming. Worked with GPU memory management, spatial transformations, and lighting models to build a more concrete low-level programming foundation.",
+      "content": "Explored the 3D graphics rendering pipeline through OpenGL and GLSL shader programming. Worked with spatial transformations, lighting models and texture mapping to build a more concrete low-level programming foundation.",
       "tags": [
         "3D Graphics",
         "OpenGL",

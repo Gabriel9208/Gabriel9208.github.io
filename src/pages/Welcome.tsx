@@ -40,16 +40,16 @@ export default function Welcome() {
           {/* Hero */}
           <BentoCell className="md:col-[1/2] md:row-[1/3]">
             <h1 style={{ fontSize: 72, fontWeight: 700, color: '#fff', letterSpacing: -1.5 }}>Yen-Yen Yeh</h1>
-            <p style={{ fontSize: 26, color: '#777' }}>NTUST CS Student · Spacial Intelligence</p>
+            <p style={{ fontSize: 26, color: '#777' }}>NTUST CS Student</p>
             <Divider />
             <p style={{ fontSize: 17, color: '#777', lineHeight: 1.6 }}>
-              Building foundations in machine learning and computer vision. A dance enthusiast.
+              3D Generation, Computer Vision, Generative Models
             </p>
             <div style={{ marginTop: 'auto', paddingTop: 20, display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {[
                 { label: 'GitHub', icon: Github, href: 'https://github.com/Gabriel9208' },
                 { label: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/%E8%A1%8D%E5%B7%96-%E8%91%89-162a762a3/' },
-                { label: 'yen08149203@gmail.com', icon: Mail, text: 'yen08149203@gmail.com' },
+                { label: 'gabriel.yenyenyeh@gmail.com', icon: Mail, text: 'gabriel.yenyenyeh@gmail.com' },
               ].map(({ label, icon: Icon, href }) => (
                 <a key={label} href={href} target="_blank" rel="noopener noreferrer"
                   style={{ fontSize: 14, padding: '6px 16px', borderRadius: 20, border: '1px solid #2a2a2a', color: '#777', display: 'inline-flex', alignItems: 'center', gap: 6, transition: 'all 0.2s' }}
@@ -66,7 +66,7 @@ export default function Welcome() {
           <BentoCell className="md:col-[2/4] md:row-[1/2]">
             <Label text="background" />
             <p style={{ fontSize: 16, color: '#777', lineHeight: 1.6 }}>
-              Explored security, cloud, and graphics. Ended up where I belong — machine learning and computer vision.
+              CS undergrad interested in controllable 3D generation. Came the long way around — through cybersecurity, cloud, and graphics.
             </p>
           </BentoCell>
 
@@ -94,27 +94,7 @@ export default function Welcome() {
             </div>
           </BentoCell>
 
-          {/* Highlight */}
-          <BentoCell className="md:col-[1/2] md:row-[3/4]" external={displayProject.link || undefined}>
-            <Label text="highlight project" />
-            <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 8, marginBottom: 4 }}>
-              <h3 style={{ fontSize: 20, fontWeight: 600, color: '#fff' }}>{displayProject.title}</h3>
-              {displayProject.status && (
-                <span style={{
-                  fontSize: 11, textTransform: 'uppercase', fontWeight: 700, padding: '3px 10px', borderRadius: 999, whiteSpace: 'nowrap',
-                  color: displayProject.status?.toLowerCase() === 'ongoing' ? '#0A84FF' : '#34C759',
-                  border: `1px solid ${displayProject.status?.toLowerCase() === 'ongoing' ? '#1a3a5c' : '#1a4a2a'}`,
-                  background: displayProject.status?.toLowerCase() === 'ongoing' ? 'rgba(10,132,255,0.1)' : 'rgba(52,199,89,0.1)'
-                }}>
-                  {displayProject.status}
-                </span>
-              )}
-            </div>
-            <p style={{ fontSize: 16, color: '#777', marginBottom: 16 }}>{displayProject.description}</p>
-            <div style={{ marginTop: 'auto', display: 'flex', flexWrap: 'wrap', gap: 4 }}>
-              {displayProject.tags?.map((t: string) => <Tag key={t} text={t} />)}
-            </div>
-          </BentoCell>
+          
 
           {/* Certificates */}
           <BentoCell className="md:col-[2/3] md:row-[3/4]">
@@ -141,7 +121,7 @@ export default function Welcome() {
 
           {/* Experience */}
           <BentoCell className="md:col-[3/4] md:row-[3/4]">
-            <Label text="experience" />
+            <Label text="internship experience" />
             {allExperience.length === 0 ? (
               <p style={{ fontSize: 16, color: '#444' }}>— none yet</p>
             ) : (
@@ -158,7 +138,7 @@ export default function Welcome() {
           </BentoCell>
 
           {/* Explorations Preview */}
-          <BentoCell className="md:col-[1/2] md:row-[4/5]" href="/exploration">
+          <BentoCell className="md:col-[1/2] md:row-[3/4]" href="/exploration">
             <Label text="explorations &rarr;" />
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               {journeyData.entries.slice(0, 3).map((entry: any, i: number) => (
@@ -172,27 +152,6 @@ export default function Welcome() {
               ))}
             </div>
           </BentoCell>
-
-          {/* Recent Work Preview */}
-          <BentoCell className="md:col-[2/4] md:row-[4/5]" href="/recent-work">
-            <Label text="recent work &rarr;" />
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 flex-grow">
-              {recentProjects.slice(0, 2).map((proj: any, i: number) => (
-                <div key={i} className={`flex flex-col ${i === 0 ? "sm:border-r" : ""}`} style={{ borderColor: '#1e1e1e', paddingRight: i === 0 ? 24 : 0 }}>
-                  <h4 style={{ fontSize: 20, fontWeight: 600, color: '#fff', marginBottom: 12 }}>{proj.title}</h4>
-                  <div style={{ marginTop: 'auto', display: 'flex', flexWrap: 'wrap', gap: 4 }}>
-                    {proj.tags?.slice(0, 2).map((t: string) => <Tag key={t} text={t} />)}
-                  </div>
-                </div>
-              ))}
-            </div>
-            {recentProjects.length > 2 && (
-              <p style={{ fontSize: 16, color: '#444', marginTop: 16, paddingTop: 16, borderTop: '1px solid #1e1e1e' }}>
-                +{recentProjects.length - 2} more &rarr;
-              </p>
-            )}
-          </BentoCell>
-
         </BentoGrid>
       </div>
     </div>
