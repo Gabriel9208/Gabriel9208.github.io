@@ -16,7 +16,7 @@ export default function Welcome() {
   {/*const displayProject = projectsData.find((p: any) => p.highlight) ?? projectsData[0];*/}
   const allCerts = certificatesData;
   const allExperience = experienceData;
-  {/*const recentProjects = projectsData.filter((p: any) => p.recent);*/)
+  {/*const recentProjects = projectsData.filter((p: any) => p.recent);*/}
 
   const Label = ({ text }: { text: string }) => (
     <p style={{ fontSize: 13, color: '#555', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 8 }}>
