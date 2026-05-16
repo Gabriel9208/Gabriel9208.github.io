@@ -43,7 +43,7 @@ export default function Welcome() {
             <p style={{ fontSize: 26, color: '#777' }}>NTUST CS Student</p>
             <Divider />
             <p style={{ fontSize: 17, color: '#777', lineHeight: 1.6 }}>
-              3D Generation, Computer Vision, Generative Models
+              3D Representation, 3D Generation
             </p>
             <div style={{ marginTop: 'auto', paddingTop: 20, display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {[
@@ -66,7 +66,7 @@ export default function Welcome() {
           <BentoCell className="md:col-[2/4] md:row-[1/2]">
             <Label text="background" />
             <p style={{ fontSize: 16, color: '#777', lineHeight: 1.6 }}>
-              CS undergrad interested in controllable 3D generation. Came the long way around — through cybersecurity, cloud, and graphics.
+              CS undergrad interested in how 3D scenes are represented and generated. Came the long way around, through cybersecurity, cloud, and graphics.
             </p>
           </BentoCell>
 

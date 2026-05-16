@@ -1,17 +1,18 @@
 {
   "meta": {
     "title": "Interests Explorations",
-    "subtitle": "I'm interested in controllable 3D generation, building foundations in machine learning and computer vision along the way. I came here the long way around — through cybersecurity, blockchain, and graphics."
+    "subtitle": "I'm interested in 3D representation, which shapes how 3D scenes can be reasoned about and generated. I came here the long way around, through cybersecurity, cloud, and graphics."
   },
   "entries": [
     {
       "time": "2026",
       "heading": "ML & CV",
-      "content": "Started in computer graphics, now building foundations in deep learning and computer vision. Looking toward 3D generation.",
+      "content": "Started in computer graphics, now building foundations in deep learning and computer vision. Looking toward 3D representation and generation.",
       "tags": [
         "Deep Learning",
         "Computer Vision",
-        "Multiview Geometry"
+        "Multiview Geometry",
+        "3D Representation"
       ]
     },
     {
